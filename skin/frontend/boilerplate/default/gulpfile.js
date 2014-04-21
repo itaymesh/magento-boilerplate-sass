@@ -12,7 +12,7 @@ var clean      = require('gulp-clean');
 var livereload = require('gulp-livereload');
 var lr         = require('tiny-lr');
 var server     = lr();
-
+var rename     = require('gulp-rename');
 var cssflip =        require('gulp-css-flip');
 
 gulp.task('less', function() {
