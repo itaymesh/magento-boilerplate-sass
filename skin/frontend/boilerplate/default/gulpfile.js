@@ -13,12 +13,17 @@ var livereload = require('gulp-livereload');
 var lr         = require('tiny-lr');
 var server     = lr();
 
+var cssflip =        require('gulp-css-flip');
+
 gulp.task('less', function() {
     return gulp.src('less/style.less')
         .pipe(less().on('error', notify.onError(function (error) {
             return 'Error compiling LESS: ' + error.message;
         })))
         // .pipe(minifycss())
+        .pipe(gulp.dest('dist/css'))
+        .pipe(rename({suffix: '-rtl'}))
+        .pipe(cssflip.gulp())
         .pipe(gulp.dest('dist/css'))
         .pipe(livereload(server))
         .pipe(notify({
