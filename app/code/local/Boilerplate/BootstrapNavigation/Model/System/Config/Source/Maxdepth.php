@@ -1,6 +1,6 @@
 <?php
 
-class Webcomm_BootstrapNavigation_Model_System_Config_Source_Maxdepth
+class Boilerplate_BootstrapNavigation_Model_System_Config_Source_Maxdepth
 {
     /**
      * Options getter

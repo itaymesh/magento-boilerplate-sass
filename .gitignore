@@ -119,9 +119,11 @@ publish
 !/app/design/adminhtml/base/default/layout
 /app/design/adminhtml/base/default/layout/*
 !/app/design/adminhtml/base/default/layout/webcomm_*
+!/app/design/adminhtml/base/default/layout/phenom_*
 !/app/design/adminhtml/base/default/template
 /app/design/adminhtml/base/default/template/*
 !/app/design/adminhtml/base/default/template/webcomm
+!/app/design/adminhtml/base/default/template/phenom
 !/app/design/adminhtml/default
 /app/design/adminhtml/default/*
 !/app/design/adminhtml/default/default
@@ -129,21 +131,26 @@ publish
 !/app/design/adminhtml/default/default/layout
 /app/design/adminhtml/default/default/layout/*
 !/app/design/adminhtml/default/default/layout/webcomm_*
+!/app/design/adminhtml/default/default/layout/phenom_*
 !/app/design/adminhtml/default/default/template
 /app/design/adminhtml/default/default/template/*
-!/app/design/adminhtml/default/default/template/webcomm
+!/app/design/adminhtml/default/default/template/phenom
 !/app/design/frontend
 /app/design/frontend/*
 !/app/design/frontend/base
 /app/design/frontend/base/*
 !/app/design/frontend/base/default
 /app/design/frontend/base/default/*
+
 !/app/design/frontend/base/default/layout
 /app/design/frontend/base/default/layout/*
 !/app/design/frontend/base/default/layout/webcomm_*
+!/app/design/frontend/base/default/layout/phenom_*
+
 !/app/design/frontend/base/default/template
 /app/design/frontend/base/default/template/*
 !/app/design/frontend/base/default/template/webcomm
+!/app/design/frontend/base/default/template/phenom
 
 # App modules
 !/app/etc
@@ -151,12 +158,14 @@ publish
 !/app/etc/modules
 /app/etc/modules/*
 !/app/etc/modules/Webcomm_*
+!/app/etc/modules/Phenom_*
 
 # App locale
 !/app/locale
 /app/locale/*
 !/app/locale/en_AU
 !/app/locale/en_US
+!/app/locale/he_IL
 /app/locale/en_US/*
 !/app/locale/en_US/template
 /app/locale/en_US/template/*
@@ -275,6 +284,7 @@ publish
 !/skin/frontend/base/default/lib
 /skin/frontend/base/default/lib/*
 !/skin/frontend/base/default/webcomm
+!/skin/frontend/base/default/phenom
 !/skin/frontend/default
 /skin/frontend/default/*
 !/skin/frontend/default/default
@@ -290,6 +300,7 @@ publish
 !/skin/frontend/default/default/lib
 /skin/frontend/default/default/lib/*
 !/skin/frontend/default/default/lib/webcomm
+!/skin/frontend/default/default/lib/phenom
 
 # Var folder
 /var
