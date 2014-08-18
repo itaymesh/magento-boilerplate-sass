@@ -1,4 +1,5 @@
-app/code/local/Webcomm/BootstrapNavigation         app/code/local/Webcomm/BootstrapNavigation
-app/design/frontend/boilerplate/default            app/design/frontend/boilerplate/default
-app/etc/modules/Webcomm_BootstrapNavigation.xml    app/etc/modules/Webcomm_BootstrapNavigation.xml
-skin/frontend/boilerplate/default                  skin/frontend/boilerplate/default
+app/code/local/Boilerplate/                            app/code/local/Boilerplate/
+app/design/frontend/boilerplate/default                app/design/frontend/boilerplate/default
+app/etc/modules/Boilerplate_Core.xml                   app/etc/modules/Boilerplate_Core.xml
+app/etc/modules/Boilerplate_BootstrapNavigation.xml    app/etc/modules/Boilerplate_BootstrapNavigation.xml
+skin/frontend/boilerplate/default                      skin/frontend/boilerplate/default
