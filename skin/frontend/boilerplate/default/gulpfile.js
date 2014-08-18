@@ -16,23 +16,21 @@ var rename     = require('gulp-rename');
 var cssflip =        require('gulp-css-flip');
 
 gulp.task('less', function() {
-    return gulp.src('less/style.less')
-        .pipe(less().on('error', notify.onError(function (error) {
-            return 'Error compiling LESS: ' + error.message;
-        })))
-        // .pipe(minifycss())
+    return gulp.src('src/less/style.less')
+        .pipe(less())
+        //.pipe(minifycss())
         .pipe(gulp.dest('dist/css'))
-        .pipe(rename({suffix: '-rtl'}))
-        .pipe(cssflip.gulp())
-        .pipe(gulp.dest('dist/css'))
-        .pipe(livereload(server))
-        .pipe(notify({
+        //.pipe(rename({suffix: '-rtl'}))
+        //.pipe(cssflip.gulp())
+        //.pipe(gulp.dest('dist/css'))
+        //.pipe(livereload(server))
+        /*.pipe(notify({
             message: 'Successfully compiled LESS'
-        }));
+        }))*/;
 });
 
 gulp.task('lint', function() {
-    return gulp.src('js/script.js')
+    return gulp.src('src/js/script.js')
         .pipe(jshint())
         .pipe(jshint.reporter('default'))
         .pipe(livereload(server));
@@ -40,21 +38,32 @@ gulp.task('lint', function() {
 
 gulp.task('js', function() {
     return gulp.src([
-            'bower_components/jquery/dist/jquery.js',
-            'bower_components/bootstrap/js/transition.js',
-            'bower_components/bootstrap/js/collapse.js',
-            'bower_components/bootstrap/js/carousel.js',
+            'bower_components/imagesloaded/imagesloaded.pkgd.min.js',
+            'bower_components/jquery-cycle2/build/jquery.cycle2.min.js',
+            'bower_components/jquery-ui/ui/minified/core.min.js',
+            'bower_components/jquery-ui/ui/minified/widget.min.js',
+            'bower_components/magnific-popup/dist/jquery.magnific-popup.min.js',
             'bower_components/bootstrap/js/dropdown.js',
-            'bower_components/bootstrap/js/modal.js',
-            'js/script.js'
+            'src/js/script.js'
         ])
         .pipe(concat('script.js'))
-        // .pipe(uglify())
+        .pipe(uglify())
         .pipe(gulp.dest('dist/js'))
         .pipe(livereload(server))
         .pipe(notify({
             message: 'Successfully compiled JS'
         }));
+});
+
+// Copy all static images
+var imagePaths = [
+    'src/img/**/*'
+];
+gulp.task('img', function () {
+    return gulp.src(imagePaths)
+        // Pass in options to the task
+        //.pipe(imagemin({optimizationLevel: 5}))
+        .pipe(gulp.dest('dist/img'));
 });
 
 // Clean
@@ -77,9 +86,9 @@ gulp.task('watch', function() {
         }
 
         // Watch .less files
-        gulp.watch('less/**/*.less', ['less']);
+        gulp.watch('src/less/**/*.less', ['less']);
 
         // Watch .js files
-        gulp.watch('js/**/*.js', ['lint', 'js']);
+        gulp.watch('src/js/**/*.js', ['lint', 'js']);
     });
 });

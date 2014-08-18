@@ -26,7 +26,11 @@
 # upgrade breaks this. These files are
 # in alphabetical order.
 
+# modgit modules
+.modgit
 
+# modgit modules
+.modman
 
 # Numerous always-ignore extensions
 *.diff
@@ -65,11 +69,13 @@ dwsync.xml
 .CVS
 intermediate
 publish
+
+# Phpstorm project files
 .idea
 
 # Composer
-!/composer.json
-!/composer.lock
+/composer.json
+/composer.lock
 /vendor
 
 # SEO
@@ -77,7 +83,7 @@ publish
 /sitemap.xml
 
 # =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=* #
-# Part B: Ignore all standard Magento  #
+# Part B: Ignore some standard Magento  #
 #         files.                       #
 # =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=* #
 #
@@ -89,218 +95,65 @@ publish
 # you usem minimal code to setup
 # your ignores.
 
-
-
 # .htaccess files
 /.htaccess.sample
-
-# API
-/api.php
-
-# App
-/app/*
-
-# App code
-!/app/code
-/app/code/*
-!/app/code/community
-/app/code/community/*/*
-!/app/code/local
-
-# App design
-!/app/design
-/app/design/*
-!/app/design/adminhtml
-/app/design/adminhtml/*
-!/app/design/adminhtml/base
-/app/design/adminhtml/base/*
-!/app/design/adminhtml/base/default
-/app/design/adminhtml/base/default/*
-!/app/design/adminhtml/base/default/layout
-/app/design/adminhtml/base/default/layout/*
-!/app/design/adminhtml/base/default/layout/webcomm_*
-!/app/design/adminhtml/base/default/layout/phenom_*
-!/app/design/adminhtml/base/default/template
-/app/design/adminhtml/base/default/template/*
-!/app/design/adminhtml/base/default/template/webcomm
-!/app/design/adminhtml/base/default/template/phenom
-!/app/design/adminhtml/default
-/app/design/adminhtml/default/*
-!/app/design/adminhtml/default/default
-/app/design/adminhtml/default/default/*
-!/app/design/adminhtml/default/default/layout
-/app/design/adminhtml/default/default/layout/*
-!/app/design/adminhtml/default/default/layout/webcomm_*
-!/app/design/adminhtml/default/default/layout/phenom_*
-!/app/design/adminhtml/default/default/template
-/app/design/adminhtml/default/default/template/*
-!/app/design/adminhtml/default/default/template/phenom
-!/app/design/frontend
-/app/design/frontend/*
-!/app/design/frontend/base
-/app/design/frontend/base/*
-!/app/design/frontend/base/default
-/app/design/frontend/base/default/*
-
-!/app/design/frontend/base/default/layout
-/app/design/frontend/base/default/layout/*
-!/app/design/frontend/base/default/layout/webcomm_*
-!/app/design/frontend/base/default/layout/phenom_*
-
-!/app/design/frontend/base/default/template
-/app/design/frontend/base/default/template/*
-!/app/design/frontend/base/default/template/webcomm
-!/app/design/frontend/base/default/template/phenom
-
-# App modules
-!/app/etc
-/app/etc/*
-!/app/etc/modules
-/app/etc/modules/*
-!/app/etc/modules/Webcomm_*
-!/app/etc/modules/Phenom_*
-
-# App locale
-!/app/locale
-/app/locale/*
-!/app/locale/en_AU
-!/app/locale/en_US
-!/app/locale/he_IL
-/app/locale/en_US/*
-!/app/locale/en_US/template
-/app/locale/en_US/template/*
-!/app/locale/en_US/template/email
-/app/locale/en_US/template/email/*
-
-# Cron files
-/cron.php
-/cron.sh
+/.htaccess
+/.htaccess.dist
 
 # Downloader
 /downloader
 
 
 # Errors
-/errors/.htaccess
-/errors/404.php
-/errors/503.php
-/errors/default
-/errors/design.xml
+#/errors/.htaccess
+#/errors/404.php
+#/errors/503.php
+#/errors/default
+#/errors/design.xml
+/errors/local.xml
 /errors/local.xml.sample
-/errors/processor.php
-/errors/report.php
+#/errors/processor.php
+#/errors/report.php
 
 
 # Misc files
-/favicon.ico
-/get.php
-/includes
+!/includes
+/includes/*
+!/includes/.htaccess
+!/includes/config.php
 
-
-# Index and installer files
-/index.php.sample
-/install.php
-
-# Global javascript
-/js/*
-
-# PHP libraries
-/lib/*
-!/lib/Varien
-/lib/Varien/*
-!/lib/Varien/Data
-/lib/Varien/Data/*
-!/lib/Varien/Data/Form
-/lib/Varien/Data/Form/*
-!/lib/Varien/Data/Form/Element
-/lib/Varien/Data/Form/Element/*
 
 # Licences
 /LICENSE_AFL.txt
 /LICENSE.html
 /LICENSE.txt
 
-# "Mage" shell script
-/mage
+# App
+/app/etc/local.xml
+/app/etc/config.xml
+/app/etc/local.xml.additional
+/app/etc/local.xml.template
+
+
+
 
 # Media
+!/media
 /media/*
+!/media/.htaccess
+!/media/boilerplate
+
 
 # Misc files
-/package.xml
 /php.ini.sample
-/pkginfo/*
 /RELEASE_NOTES.txt
-/shell
 
 # Skin
-!/skin
-/skin/*
 
 # Skin adminhtml
-!/skin/adminhtml
-/skin/adminhtml/*
-!/skin/adminhtml/base
-/skin/adminhtml/base/*
-!/skin/adminhtml/base/default
-/skin/adminhtml/base/default/*
-!/skin/adminhtml/base/default/css
-/skin/adminhtml/base/default/css/*
-!/skin/adminhtml/base/default/images
-/skin/adminhtml/base/default/images/*
-!/skin/adminhtml/base/default/js
-/skin/adminhtml/base/default/js/*
-!/skin/adminhtml/base/default/lib
-/skin/adminhtml/base/default/lib/*
-!/skin/adminhtml/base/default/webcomm
-!/skin/adminhtml/default
-/skin/adminhtml/default/*
-!/skin/adminhtml/default/default
-/skin/adminhtml/default/default/*
-!/skin/adminhtml/default/default/css
-/skin/adminhtml/default/default/css/*
-!/skin/adminhtml/default/default/images
-/skin/adminhtml/default/default/images/*
-!/skin/adminhtml/default/default/js
-/skin/adminhtml/default/default/js/*
-!/skin/adminhtml/default/default/lib
-/skin/adminhtml/default/default/lib/*
 
 # Skin frontend
-!/skin/frontend
-/skin/frontend/*
-!/skin/frontend/base
-/skin/frontend/base/*
-!/skin/frontend/base/default
-/skin/frontend/base/default/*
-!/skin/frontend/base/default/css
-/skin/frontend/base/default/css/*
-!/skin/frontend/base/default/fonts
-/skin/frontend/base/default/fonts/*
-!/skin/frontend/base/default/images
-/skin/frontend/base/default/images/*
-!/skin/frontend/base/default/js
-/skin/frontend/base/default/js/*
-!/skin/frontend/base/default/lib
-/skin/frontend/base/default/lib/*
-!/skin/frontend/base/default/webcomm
-!/skin/frontend/base/default/phenom
-!/skin/frontend/default
-/skin/frontend/default/*
-!/skin/frontend/default/default
-/skin/frontend/default/default/*
-!/skin/frontend/default/default/css
-/skin/frontend/default/default/css/*
-!/skin/frontend/default/default/fonts
-/skin/frontend/default/default/fonts/*
-!/skin/frontend/default/default/images
-/skin/frontend/default/default/images/*
-!/skin/frontend/default/default/js
-/skin/frontend/default/default/js/*
-!/skin/frontend/default/default/lib
-/skin/frontend/default/default/lib/*
-!/skin/frontend/default/default/lib/webcomm
-!/skin/frontend/default/default/lib/phenom
+
 
 # Var folder
 /var
@@ -320,8 +173,6 @@ publish
 # be.
 
 
-
-
 # ==================================== #
 # Part D: Setup your theme overrides   #
 # ==================================== #
@@ -330,14 +181,28 @@ publish
 # overrides in app/design/frontend and
 # skin/frontend
 
-
-
 # Boilerplate Theme
 !/app/design/frontend/boilerplate
 !/skin/frontend/boilerplate
+
+
+# ==================================== #
+# Part F: Theme   #
+# ==================================== #
 
 # If you want to be very clever, you
 # will duplicate 'mytheme', as it
 # inherits all styling from 'boilerplate'
 # and makes upgrading easier!
-!/skin/frontend/mytheme
+!/skin/frontend/boilerplate/
+/skin/frontend/boilerplate/*
+!/skin/frontend/boilerplate/default
+/skin/frontend/boilerplate/default/*
+!/skin/frontend/boilerplate/default/*
+/skin/frontend/boilerplate/default/dist
+
+
+# ==================================== #
+# Part E: ignore modman folder   #
+# ==================================== #
+/.modman

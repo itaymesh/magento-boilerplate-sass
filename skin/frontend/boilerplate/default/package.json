@@ -1,6 +1,6 @@
 {
     "devDependencies": {
-        "gulp": "~3.6.0",
+        "gulp": "~3",
         "gulp-less": "~1.1.10",
         "gulp-clean": "~0.2.4",
         "gulp-notify": "~0.3.4-2",
