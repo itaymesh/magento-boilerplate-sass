@@ -199,6 +199,7 @@ publish
 !/skin/frontend/boilerplate/default
 /skin/frontend/boilerplate/default/*
 !/skin/frontend/boilerplate/default/*
+!/skin/frontend/boilerplate/default/src/*
 /skin/frontend/boilerplate/default/dist
 
 

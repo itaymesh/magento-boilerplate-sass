@@ -1,47 +1,11 @@
 # No node modules are required
 node_modules
 
-# Neither with bower components, except we'll include the bootstrap fonts file
 bower_components/*
-!bower_components/bootstrap
-bower_components/bootstrap/*
-!bower_components/bootstrap/dist
-bower_components/bootstrap/dist/*
-!bower_components/bootstrap/dist/fonts
-
-!bower_components/font-awesome
-bower_components/font-awesome/*
-!bower_components/font-awesome/fonts
-
-
-!bower_components/imagesloaded
-bower_components/imagesloaded/*
-!bower_components/imagesloaded/imagesloaded.pkgd.min.js
-
-bower_components/jquery-cycle2/*
-!bower_components/jquery-cycle2/
-!bower_components/jquery-cycle2/build
-bower_components/jquery-cycle2/build/*
-!bower_components/jquery-cycle2/build/jquery.cycle2.min.js
-
-!bower_components/jquery-ui
-bower_components/jquery-ui/*
-!bower_components/jquery-ui/ui
-bower_components/jquery-ui/ui/*
-!bower_components/jquery-ui/ui/minified
-bower_components/jquery-ui/ui/minified/*
-!bower_components/jquery-ui/ui/minified/core.min.js
-!bower_components/jquery-ui/ui/minified/widget.min.js
-
-
-bower_components/magnific-popup/*
-!bower_components/magnific-popup/
-!bower_components/magnific-popup/dist
-bower_components/magnific-popup/dist/*
-!bower_components/magnific-popup/dist/jquery.magnific-popup.min.js
-
-!bower_components/bootstrap/js
-bower_components/bootstrap/js/*
-!bower_components/bootstrap/js/dropdown.js
+!bower_components/jquery
+bower_components/jquery/*
+!bower_components/jquery/dist
+bower_components/jquery/dist/*
+!bower_components/jquery/dist/jquery.min.js
 
 
