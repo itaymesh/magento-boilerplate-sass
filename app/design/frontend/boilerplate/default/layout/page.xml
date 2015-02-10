@@ -59,7 +59,24 @@ Default layout, loads most of the pages
                <!-- <action method="addItem"><type>skin_js</type><name>js/ie6.js</name><params/><if>lt IE 7</if></action>-->
 
                 <!--########## add boilerplate static files #################-->
-                <action method="addItem"><type>skin_js</type><name>bower_components/jquery/dist/jquery.min.js</name></action>
+                <action method="addJs">
+                    <script>boilerplate/libs.js</script>
+                </action>
+
+
+                <!-- Theme assets -->
+                <action method="addCss">
+                    <stylesheet>dist/css/style.css</stylesheet>
+                </action>
+
+                <action method="addItem">
+                    <type>skin_js</type>
+                    <name>dist/js/script.js</name>
+                </action>
+
+                <!-- Add additioanl child blocks -->
+                <block type="core/template" name="boilerplate.head.meta"
+                       template="boilerplate/page/html/head/meta.phtml"/>
 
             </block>
 

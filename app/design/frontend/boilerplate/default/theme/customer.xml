@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<layout>
+    <customer_account>
+
+        <reference name="customer_account_navigation">
+            <action method="removeLink">
+                <name>recurring_profiles</name>
+            </action>
+            <action method="removeLink">
+                <name>billing_agreements</name>
+            </action>
+            <action method="removeLink">
+                <name>OAuth Customer Tokens</name>
+            </action>
+            <action method="removeLink">
+                <name>downloadable_products</name>
+            </action>
+        </reference>
+        <reference name="left">
+            <remove name="cart_sidebar"/>
+            <remove name="catalog.compare.sidebar"/>
+            <remove name="sale.reorder.sidebar"/>
+        </reference>
+        <reference name="left">
+            <action method="unsetChild">
+                <name>left.permanent.callout</name>
+            </action>
+        </reference>
+    </customer_account>
+
+</layout>

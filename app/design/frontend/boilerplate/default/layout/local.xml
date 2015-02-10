@@ -4,25 +4,6 @@
     <!-- Default handle, loaded on most pages -->
     <default>
 
-        <reference name="head">
-
-
-            <!-- Add our assets -->
-            <action method="addCss">
-                <stylesheet>dist/css/style.css</stylesheet>
-            </action>
-            <action method="addItem">
-                <type>skin_js</type>
-                <name>dist/js/script.js</name>
-            </action>
-
-            <!-- Add additioanl child blocks -->
-            <block type="core/template" name="boilerplate.head.meta"
-                   template="boilerplate/page/html/head/meta.phtml"/>
-
-
-        </reference>
-
         <!-- ##################### GLOBAL BLOCKS ########################### -->
 
 
@@ -48,6 +29,32 @@
             <remove name="cms_footer_links"/>
 
         </reference>
+
+        <!--Magento's Default Sidebar Blocks-->
+       <!-- <remove name="cart_sidebar"/>
+        &lt;!&ndash;Cart Sidebar&ndash;&gt;
+        <remove name="wishlist_sidebar"/>
+        &lt;!&ndash;Wishlist Sidebar&ndash;&gt;
+        <remove name="catalog.compare.sidebar"/>
+        &lt;!&ndash;Compare Items Sidebar&ndash;&gt;
+        <remove name="right.permanent.callout"/>
+        &lt;!&ndash;Right Callout Sample Data&ndash;&gt;
+        <remove name="left.permanent.callout"/>
+        &lt;!&ndash;Left Callout Sample Data&ndash;&gt;
+        <remove name="right.reports.product.viewed"/>
+        &lt;!&ndash;Viewed Products&ndash;&gt;
+        <remove name="right.reports.product.compared"/>
+
+        <remove name="left.newsletter"/>
+        &lt;!&ndash;Sidebar Newsletter&ndash;&gt;
+        <remove name="right.poll"/>
+        &lt;!&ndash;Poll&ndash;&gt;
+        <remove name="tags_popular"/>
+        &lt;!&ndash;Popular Tags&ndash;&gt;
+        <remove name="paypal.partner.right.logo"/>
+        &lt;!&ndash;Paypal logo Sample Data&ndash;&gt;
+        <remove name="catalogsearch.leftnav"/>  -->
+
 
     </default>
 

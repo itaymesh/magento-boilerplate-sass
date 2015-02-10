@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<theme>
+    <parent>base/default</parent>
+    <layout>
+        <updates>
+            <boilareplate_default_customer>
+                <file>theme/customer.xml</file>
+            </boilareplate_default_customer>
+        </updates>
+    </layout>
+</theme>
