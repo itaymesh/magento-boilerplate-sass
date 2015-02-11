@@ -30,8 +30,8 @@
 
         </reference>
 
-        <!--Magento's Default Sidebar Blocks-->
-       <!-- <remove name="cart_sidebar"/>
+        <!--Magento's Default Sidebar Blocks
+        <remove name="cart_sidebar"/>
         &lt;!&ndash;Cart Sidebar&ndash;&gt;
         <remove name="wishlist_sidebar"/>
         &lt;!&ndash;Wishlist Sidebar&ndash;&gt;
@@ -53,7 +53,7 @@
         &lt;!&ndash;Popular Tags&ndash;&gt;
         <remove name="paypal.partner.right.logo"/>
         &lt;!&ndash;Paypal logo Sample Data&ndash;&gt;
-        <remove name="catalogsearch.leftnav"/>  -->
+        <remove name="catalogsearch.leftnav"/>-->
 
 
     </default>
@@ -66,7 +66,6 @@
             </action>
 
         </reference>
-
     </cms_index_index>
     <!--################ CATALOGSEARCH  ############################-->
 
