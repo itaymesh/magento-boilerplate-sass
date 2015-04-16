@@ -86,7 +86,7 @@
     <!--################## CUSTOMER #####################-->
     <customer_account>
         <reference name="customer_account_navigation">
-            <action method="removeLink">
+       <!--    <action method="removeLink">
                 <name>recurring_profiles</name>
             </action>
             <action method="removeLink">
@@ -97,7 +97,7 @@
             </action>
             <action method="removeLink">
                 <name>downloadable_products</name>
-            </action>
+            </action>-->
         </reference>
         <reference name="left">
             <remove name="cart_sidebar"/>
