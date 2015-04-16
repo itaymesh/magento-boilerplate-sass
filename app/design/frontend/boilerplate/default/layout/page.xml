@@ -77,6 +77,10 @@ Default layout, loads most of the pages
                 <!-- Add additioanl child blocks -->
                 <block type="core/template" name="boilerplate.head.meta"
                        template="boilerplate/page/html/head/meta.phtml"/>
+                       
+                 <block type="core/text" name="jquery.noconflict">
+                    <action method="setText"><text><![CDATA[<script>jQuery.noConflict();</script>]]></text></action>
+                </block>
 
             </block>
 
