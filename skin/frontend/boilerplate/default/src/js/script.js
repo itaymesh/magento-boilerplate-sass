@@ -72,3 +72,5 @@
     });
 
 })(jQuery);
+
+var $j = jQuery.noConflict();
