@@ -1,6 +1,6 @@
 var gulp = require('gulp');
+var sass = require('gulp-sass');
 
-var less = require('gulp-less');
 var minifycss = require('gulp-minify-css');
 
 var jshint = require('gulp-jshint');
@@ -19,22 +19,23 @@ var cssflip = require('gulp-css-flip');
 //var bless = require('gulp-bless');
 
 
-gulp.task('less', function () {
-    return gulp.src('src/less/style.less')
-        .pipe(less())
+gulp.task('scss', function () {
+    return gulp.src('./src/scss/**/*.scss')
+        .pipe(sass())
         //.pipe(minifycss())
 
         //.pipe(bless())
         //.pipe(gulp.dest('dist/css'))
 
         // UNCOMMENT TO CREATE RTL CSS FILES
-        .pipe(rename({suffix: '-rtl'}))
-        .pipe(cssflip.gulp())
+        //.pipe(rename({suffix: '-rtl'}))
+        //.pipe(cssflip.gulp())
+
         .pipe(gulp.dest('dist/css'))
 
         .pipe(livereload())
         .pipe(notify({
-            message: 'Successfully compiled LESS'
+            message: 'Successfully compiled SASS files'
         }));
 });
 
@@ -161,7 +162,7 @@ gulp.task('clean', function () {
 
 // Default task
 gulp.task('default', ['clean'], function () {
-    gulp.start('less', 'lint', 'js');
+    gulp.start('sass', 'lint', 'js');
 });
 
 // Watch
@@ -170,7 +171,7 @@ gulp.task('watch', function () {
     livereload.listen();
 
     // Watch .less files
-    gulp.watch('src/less/**/*.less', ['less']);
+    gulp.watch('src/scss/**/*.scss', ['sass']);
 
     // Watch .js files
     gulp.watch('src/js/**/*.js', ['lint', 'js']);

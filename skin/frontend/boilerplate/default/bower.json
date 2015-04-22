@@ -14,7 +14,6 @@
     ],
     "dependencies": {
         "jquery" : "~2",
-        "bootstrap": "~3",
         "bootstrap-sass": "~3",
         "font-awesome": "~4",
         "imagesloaded": "~3",
