@@ -1,0 +1,85 @@
+<?php
+/**
+ * @category    Fishpig
+ * @package     Fishpig_iBanners
+ * @license     http://fishpig.co.uk/license.txt
+ * @author      Ben Tideswell <help@fishpig.co.uk>
+ * @modified    Itay Raz <itay@studioraz,co.il>
+ */
+?>
+
+<?php if ( $this->hasValidGroup() ): ?>
+	<?php $group = $this->getGroup() ?>
+	<?php $banners = $this->getBanners() ?>
+
+	<?php if ( $this->getGroup()->getBannerCount() > 0 ): ?>
+
+
+		<div class="slideshow-slides slideshow"
+			id="<?php $this->cssIdBuilder( 'slides' ); ?>"
+			<?php if ( $group->getShowNavArrows() ): ?>
+				data-cycle-prev="#<?php $this->cssIdBuilder( 'control-prev' ); ?>"
+				data-cycle-next="#<?php $this->cssIdBuilder( 'control-next' ); ?>"
+			<?php endif; ?>
+			<?php if ( $group->getShowPager() ): ?>
+				data-cycle-pager="#<?php $this->cssIdBuilder( 'pager' ); ?>"
+			<?php endif; ?>
+			data-cycle-pager-template="<div class=page></div>">
+			<?php foreach ( $banners as $banner ): ?>
+				<div id="slide-<?php echo $banner->getId() ?>"
+				     class="slide <?php $this->cssClassBuilder( 'slide' ); ?>">
+					<?php if ( $banner->hasUrl() ): ?>
+						<a href="<?php echo $banner->getUrl() ?>">
+							<img src="<?php echo $banner->getImageUrl(); ?>"
+							     alt="<?php echo $this->escapeHtml( $banner->getTitle() ) ?>"/>
+						</a>
+					<?php else: ?>
+						<img src="<?php echo $banner->getImageUrl(); ?>"
+						     alt="<?php echo $this->escapeHtml( $banner->getTitle() ) ?>"/>
+					<?php endif; ?>
+				</div>
+			<?php endforeach; ?>
+		</div>
+		<?php if ( $group->getShowPager() ): ?>
+			<div class="slideshow-pager" id="<?php $this->cssIdBuilder( 'pager' ); ?>"></div>
+		<?php endif; ?>
+
+		<script type="text/javascript">
+			//<![CDATA[
+			(function ($) {
+
+
+				var cycleOptions = {
+					timeout: <?php echo $group->getCarouselFrequency() ?>,
+					slides: '.slide',
+					paused: !<?php echo $group->getCarouselAuto(); ?>,
+					reverse: 0,
+					pauseOnHover: true,
+					showArrows: <?php echo $group->getShowNavArrows() ? 1 : 0; ?>
+
+				}
+				<?php if ( $this->getGroup()->getCarouselVisibleSlides() <= 1 ): ?>
+				var cycleOptions = $.extend(cycleOptions, {
+					speed: <?php echo $this->getGroup()->getCarouselDuration() ?>,
+					fx: '<?php echo $this->getGroup()->getCarouselEffect() ?>'
+
+
+				});
+				<?php else: ?>
+				cycleOptions = $.extend(cycleOptions, {
+					fx: 'carousel',
+					carouselFluid: true,
+					allowWrap: 1,
+					carouselVisible: <?php echo $this->getGroup()->getCarouselVisibleSlides() ?>,
+					autoHeight: 1
+				});
+				<?php endif; ?>
+
+				$('#<?php $this->cssIdBuilder( 'slides' ); ?>').cycleEvents().cycle(cycleOptions);
+
+			})(jQuery);
+			//]]>
+		</script>
+	<?php endif; ?>
+
+<?php endif; ?>

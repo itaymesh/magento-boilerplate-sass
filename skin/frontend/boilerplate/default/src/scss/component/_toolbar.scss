@@ -1,0 +1,229 @@
+$toolbar-height: auto;
+
+/* -------------------------------------------- *
+ * Toolbar
+ */
+
+.toolbar {
+  /*margin-top: $box-spacing;
+  margin-bottom: 15px;
+  border-bottom: 1px solid $c-module-border;
+  border-top: 1px solid $c-module-border;
+  background: $c-module-background;
+  padding: 5px 10px 0px 10px;*/
+
+  &:after {
+    /*@include clearfix;*/
+  }
+}
+
+.pager-no-toolbar {
+  /*margin-bottom: $box-spacing;*/
+}
+
+// This will apply to the bottom toolbar
+.pager-no-toolbar ~ .pager-no-toolbar {
+  /*margin-top: $box-spacing;*/
+}
+
+.toolbar,
+.pager {
+  /*font-family: $f-stack-special;
+  color: $c-text;
+  line-height: 30px;
+  font-size: $f-size-xs;*/
+}
+
+.toolbar label,
+.pager-no-toolbar label {
+  /*font-weight: normal;
+  text-transform: uppercase;*/
+}
+
+/*$toolbar-icon-padding-offset: 8px;*/
+
+.sorter {
+  float: left;
+  /*margin-bottom: 5px;*/
+
+  label {
+    float: left;
+    margin-right: 5px;
+
+    &:after {
+      content: ':';
+    }
+  }
+}
+
+.sorter > .sort-by {
+  float: left;
+  margin-right: 5px;
+  height: $toolbar-height;
+  select {
+    float: left;
+
+  }
+  .sort-by-switcher {
+    height: $toolbar-height;
+    display: inline-block;
+    /*@extend .icon-sprite;*/
+  }
+  .sort-by-switcher--asc {
+    /*background-position: 0+4px (-550px+$toolbar-icon-padding-offset);*/
+    &:hover {
+      /*background-position: -50px+4px (-550px+$toolbar-icon-padding-offset);*/
+    }
+  }
+  .sort-by-switcher--desc {
+    /*background-position: 0+4px (-575px+$toolbar-icon-padding-offset);*/
+    &:hover {
+      /*background-position: -50px+4px (-575px+$toolbar-icon-padding-offset);*/
+    }
+  }
+}
+
+.sorter > .view-mode {
+  float: right;
+
+  .grid,
+  .list {
+    float: left;
+    width: 30px;
+    height: $toolbar-height;
+    /*@extend .icon-sprite;*/
+  }
+  .grid {
+    margin-right: 5px;
+    /*background-position: $toolbar-icon-padding-offset (-500px+$toolbar-icon-padding-offset);*/
+  }
+  strong.grid,
+  a.grid:hover {
+    /*background-position: -50px+$toolbar-icon-padding-offset (-500px+$toolbar-icon-padding-offset);*/
+  }
+  .list {
+    // We want the icon to line up with the container width, so we are adding 3px
+    /*background-position: $toolbar-icon-padding-offset+3px (-525px+$toolbar-icon-padding-offset);*/
+  }
+  strong.list,
+  a.list:hover {
+    /*background-position: -50px+$toolbar-icon-padding-offset+3px (-525px+$toolbar-icon-padding-offset);*/
+  }
+}
+
+.pager {
+  float: right;
+  overflow: hidden;
+
+  & > .count-container {
+    float: left;
+  }
+
+  .amount {
+    float: left;
+    /*font-family: $f-stack-sans;*/
+    white-space: nowrap;
+    margin: 0 15px 0 0;
+  }
+
+  .limiter {
+    float: left;
+    height: $toolbar-height;
+    line-height: $toolbar-height;
+
+    & > label {
+      padding-right: 5px;
+
+      &:after {
+        content: ':';
+      }
+    }
+  }
+
+  .amount,
+  .limiter,
+  .pages {
+
+  }
+
+}
+
+.pages {
+  float: right;
+  overflow: hidden;
+  margin-left: 15px;
+
+  strong {
+    display: none;
+  }
+}
+
+.pages li {
+  float: left;
+}
+
+.pages a,
+.pages span {
+  display: inline-block;
+  border: 0;
+  /*font-size: $f-size-s;*/
+  text-align: center;
+  text-transform: uppercase;
+  vertical-align: middle;
+  white-space: nowrap;
+  //line-height: $toolbar-height;
+  width: 25px;
+  height: $toolbar-height;
+  padding: 0;
+  /*color: $c-action;
+  font-family: $f-stack-sans;*/
+}
+
+.pages .current,
+.pages .current:hover {
+  /*color: $c-text;
+  border: 1px solid $c-module-border;*/
+  width: $toolbar-height;
+  background-color: #FFFFFF;
+  cursor: default;
+}
+
+.pages .next,
+.pages .previous {
+  // New HP5BP technique: https://github.com/h5bp/html5-boilerplate/commit/aa0396eae757c9e03dda4e463fb0d4db5a5f82d7
+  font: 0/0 a;
+  text-shadow: none;
+  color: transparent;
+  background-color: transparent;
+  position: relative;
+
+  &:hover {
+    /*border: 1px solid $c-action;*/
+  }
+}
+
+.pages .next {
+  &:before {
+    /*@include triangle(right, 4px, $c-action);*/
+    top: 50%;
+    margin-top: -3px;
+    left: 50%;
+    margin-left: -2px;
+  }
+  &:hover:before {
+    /*@include triangle(right, 4px, $c-stimulus);*/
+  }
+}
+
+.pages .previous {
+  &:before {
+    /*@include triangle(left, 4px, $c-action);*/
+    top: 50%;
+    margin-top: -3px;
+    left: 50%;
+    margin-left: -2px;
+  }
+  &:hover:before {
+    /*@include triangle(left, 4px, $c-stimulus);*/
+  }
+}

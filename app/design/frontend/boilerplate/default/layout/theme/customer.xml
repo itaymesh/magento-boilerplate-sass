@@ -27,5 +27,15 @@
             </action>
         </reference>
     </customer_account>
+    <default>
+        <reference name="top.links">
+            <action method="removeLinkByUrl">
+                <url helper="customer/getAccountUrl"/>
+            </action>
+            <action method="removeLinkByUrl">
+                <url helper="customer/getRegisterUrl"/>
+            </action>
+        </reference>
 
+    </default>
 </layout>

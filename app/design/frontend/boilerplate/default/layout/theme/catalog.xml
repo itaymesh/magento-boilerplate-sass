@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<layout>
+    <catalog_category_default>
+        <update handle="update_product_list"/>
+    </catalog_category_default>
+
+    <catalog_category_layered>
+        <update handle="update_product_list"/>
+    </catalog_category_layered>
+
+    <update_product_list>
+        <reference name="product_list">
+            <action method="setColumnCount">
+                <count>3</count>
+            </action>
+        </reference>
+        <reference name="product_list.after">
+            <block name="boilerplate_product_list_js" type="core/template"
+                   template="boilerplate/catalog/product/list/js.phtml"/>
+        </reference>
+    </update_product_list>
+</layout>

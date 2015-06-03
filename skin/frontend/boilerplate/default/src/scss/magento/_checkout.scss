@@ -1,0 +1,19 @@
+/* Shopping cart total summary row expandable to details */
+tr.summary-total {
+  cursor: pointer;
+}
+
+tr.summary-total td {
+}
+
+tr.summary-total .summary-collapse {
+  float: right;
+  text-align: right;
+  padding-left: 20px;
+  @include background-image('bkg_collapse.gif');
+  background-position: 0 5px;
+  cursor: pointer;
+}
+
+
+

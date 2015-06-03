@@ -1,0 +1,29 @@
+/* ============================================ *
+ * Item Options
+ * ============================================ */
+.item-options {
+  margin: 0;
+  padding: 0;
+  //font-size: $f-size;
+  //font-family: $f-stack-special;
+
+  &:after {
+    @include clearfix;
+  }
+
+  dt {
+    float: left;
+    clear: left;
+    font-weight: normal;
+
+    &:after {
+      content: ': ';
+    }
+  }
+
+  dd {
+    float: left;
+    padding-left: 5px;
+    margin: 0 0 6px;
+  }
+}

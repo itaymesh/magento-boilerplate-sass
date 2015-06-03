@@ -11,3 +11,29 @@
         }
     }
 }
+.navbar-nav {
+  > li {
+    .dropdown-menu {
+      padding-top: 0;
+      padding-bottom: 0;
+      table-layout: fixed;
+      > ul, > .menu-cms-block {
+        display: table-cell;
+        white-space: nowrap;
+        vertical-align: top;
+      }
+      .menu-cms-block > p {
+        margin: 0;
+      }
+      > ul {
+
+      }
+    }
+    a {
+      color:$black;
+      &:hover {
+
+      }
+    }
+  }
+}

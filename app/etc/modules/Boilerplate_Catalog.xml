@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Boilerplate_Catalog>
+            <active>true</active>
+            <codePool>local</codePool>
+            <depends>
+                <Boilerplate_Core/>
+                <Mage_Catalog/>
+
+            </depends>
+        </Boilerplate_Catalog>
+    </modules>
+</config>

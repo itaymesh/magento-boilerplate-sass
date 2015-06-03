@@ -28,8 +28,8 @@ gulp.task('scss', function () {
         //.pipe(gulp.dest('dist/css'))
 
         // UNCOMMENT TO CREATE RTL CSS FILES
-        //.pipe(rename({suffix: '-rtl'}))
-        //.pipe(cssflip.gulp())
+        .pipe(rename({suffix: '-rtl'}))
+        .pipe(cssflip.gulp())
 
         .pipe(gulp.dest('dist/css'))
 
@@ -64,7 +64,7 @@ gulp.task('js.libs', function () {
         'bower_components/magnific-popup/dist/jquery.magnific-popup.js',
 
         // Bootstrap
-        'bower_components/bootstrap/js/dropdown.js',
+        'bower_components/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js',
 
         // jQuery Cycle 2
         'bower_components/jquery-cycle2/build/jquery.cycle2.js',
@@ -103,7 +103,7 @@ gulp.task('js.libs', function () {
         .pipe(concat('libs.js'))
         //.pipe(uglify())
         .pipe(gulp.dest('../../../../js/boilerplate'))
-        .pipe(livereload(server))
+        .pipe(livereload())
         .pipe(notify({
             message: 'Successfully compiled JS lib boilerplate'
         }));
@@ -171,7 +171,7 @@ gulp.task('watch', function () {
     livereload.listen();
 
     // Watch .less files
-    gulp.watch('src/scss/**/*.scss', ['sass']);
+    gulp.watch('src/scss/**/*.scss', ['scss']);
 
     // Watch .js files
     gulp.watch('src/js/**/*.js', ['lint', 'js']);

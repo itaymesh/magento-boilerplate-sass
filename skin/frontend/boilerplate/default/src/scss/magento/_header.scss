@@ -1,0 +1,37 @@
+header[role="banner"] {
+  @include make-row();
+  margin-top: $line-height-computed;
+  margin-bottom: $line-height-computed;
+
+  > .logo {
+    @include make-md-column(5);
+  }
+
+  .quick-access {
+    @include make-md-column(7);
+  }
+
+  @media (min-width: $screen-sm) {
+    .form-language {
+      float: left;
+      width: 160px;
+
+      .form-control {
+        width: 120px;
+      }
+    }
+    .links {
+      float: right;
+      line-height: $input-height-small; // Line up with template switcher to left
+    }
+    .form-search {
+      @include clearfix();
+    }
+  }
+
+  @media (min-width: $screen-md) {
+    .quick-access {
+      float: right;
+    }
+  }
+}

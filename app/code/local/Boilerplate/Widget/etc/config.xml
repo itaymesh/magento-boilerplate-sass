@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Boilerplate_Widget>
+            <version>0.1.0</version>
+        </Boilerplate_Widget>
+    </modules>
+    <global>
+        <models>
+            <boilerplate_widget>
+                <class>Boilerplate_Widget_Model</class>
+                <resourceModel>boilerplate_widget_resource</resourceModel>
+            </boilerplate_widget>
+            <boilerplate_widget_resource>
+                <class>Boilerplate_Widget_Model_Resource</class>
+            </boilerplate_widget_resource>
+        </models>
+        <blocks>
+            <boilerplate_widget>
+                <class>Boilerplate_Widget_Block</class>
+            </boilerplate_widget>
+        </blocks>
+        <helpers>
+            <boilerplate_widget>
+                <class>Boilerplate_Widget_Helper</class>
+            </boilerplate_widget>
+        </helpers>
+    </global>
+</config>

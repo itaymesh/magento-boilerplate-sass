@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<layout>
+    <default>
+        <reference name="masthead">
+            <block type="cms/block" name="masthead.block.right">
+                <action method="setBlockId">
+                    <blockId>masthead_block_right</blockId>
+                </action>
+            </block>
+            <block type="cms/block" name="masthead.block.middle">
+                <action method="setBlockId">
+                    <blockId>masthead_block_middle</blockId>
+                </action>
+            </block>
+            <block type="cms/block" name="masthead.block.left">
+                <action method="setBlockId">
+                    <blockId>masthead_block_left</blockId>
+                </action>
+            </block>
+        </reference>
+        <reference name="footer">
+            <block type="core/template" name="footer_social_links"
+                   template="boilerplate/page/html/footer/social.phtml"/>
+            <block type="ipmenumanager/view" name="footer_menu">
+                <action method="setMenuCode">
+                    <code>footer_menu</code>
+                </action>
+            </block>
+        </reference>
+    </default>
+    <cms_index_index>
+        <reference name="content">
+            <block name="home.slideshow" type="ibanners/view">
+                <action method="setGroupCode">
+                    <code>home</code>
+                </action>
+            </block>
+            <block type="cms/block" name="home_grid">
+                <action method="setBlockId">
+                    <blockId>home_grid</blockId>
+                </action>
+            </block>
+            <block type="cms/block" name="news_sideshow_carousel">
+                <action method="setBlockId">
+                    <blockId>news_sideshow_carousel</blockId>
+                </action>
+            </block>
+            <block name="home.container2" type="core/template" template="boilerplate/cms/home/container2.phtml">
+                <block name="home.celebs" type="ibanners/view">
+                    <action method="setGroupCode">
+                        <code>home_celebs</code>
+                    </action>
+                </block>
+                <block name="home.instagram" type="ibanners/view">
+                    <action method="setGroupCode">
+                        <code>home_instagram</code>
+                    </action>
+                </block>
+            </block>
+        </reference>
+    </cms_index_index>
+</layout>

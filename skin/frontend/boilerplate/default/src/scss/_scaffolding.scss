@@ -1,45 +1,32 @@
 @import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/scaffolding";
 
-.page-popup {
-    padding: $grid-gutter-width;
+body {
+  direction: ltr;
 }
 
-header[role="banner"] {
-    @include make-row();
-    margin-top: $line-height-computed;
-    margin-bottom: $line-height-computed;
+/* make layout 100% height */
+html,
+body {
+  height: 100%;
+}
+.wrapper {
+  min-height: 100%;
+  position: relative;
+}
 
-    > .logo {
-        @include make-md-column(5);
-    }
+.main-content {
+  padding-bottom: 220px;
+}
+footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
 
-    .quick-access {
-        @include make-md-column(7);
-    }
 
-    @media (min-width: $screen-sm) {
-        .form-language {
-            float: left;
-            width: 160px;
-
-            .form-control {
-                width: 120px;
-            }
-        }
-        .links {
-            float: right;
-            line-height: $input-height-small; // Line up with template switcher to left
-        }
-        .form-search {
-            @include clearfix();
-        }
-    }
-
-    @media (min-width: $screen-md) {
-        .quick-access {
-            float: right;
-        }
-    }
+.page-popup {
+    padding: $grid-gutter-width;
 }
 
 .layout {

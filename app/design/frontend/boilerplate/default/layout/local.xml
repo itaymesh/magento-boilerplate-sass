@@ -16,11 +16,11 @@
         </reference>
 
         <!-- ### HEADER ### -->
-        <reference name="top.links">
+        <!--<reference name="top.links">
             <action method="removeLinkBlock">
                 <blockName>wishlist_link</blockName>
             </action>
-        </reference>
+        </reference>-->
 
         <!-- ### FOOTER ### -->
         <reference name="footer">
@@ -86,7 +86,7 @@
     <!--################## CUSTOMER #####################-->
     <customer_account>
         <reference name="customer_account_navigation">
-       <!--    <action method="removeLink">
+         <!--   <action method="removeLink">
                 <name>recurring_profiles</name>
             </action>
             <action method="removeLink">

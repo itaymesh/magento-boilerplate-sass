@@ -1,0 +1,10 @@
+<script>
+	(function ($) {
+		// HOVER IMAGE ANIMATION
+		$('.item-has-hover-image', '.products-grid').hover(function () {
+			jQuery(this).children("img.hover-image").stop().fadeToggle(function () {
+
+			});
+		});
+	})(jQuery);
+</script>

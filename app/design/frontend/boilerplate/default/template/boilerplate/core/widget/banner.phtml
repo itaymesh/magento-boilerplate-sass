@@ -1,0 +1,7 @@
+<div class="widget-banner<?php if ( $this->getCssClass() ): ?> <?php echo $this->getCssClass(); ?><?php endif; ?>">
+	<a class="widget-cell" href="<?php echo $this->getWidgetUrl(); ?>">
+		<span class="title"><?php echo $this->getTitle(); ?></span>
+		<span class="description"><?php echo $this->getDescription(); ?></span>
+		<img src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . $this->getImage(); ?>" alt=""/>
+	</a>
+</div>

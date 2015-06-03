@@ -1,5 +1,10 @@
 @import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/grid";
 
+.container-padding-less {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 .col2-set,
 .col2-set,
 .col4-set {

@@ -1,0 +1,14 @@
+/* ============================================ *
+ * Category Landing Pages
+ * ============================================ */
+
+.catalog-category-view{
+
+}
+
+.category-title {
+  div[role="main"] & {
+    @extend .sr-only;
+  }
+}
+

@@ -1,0 +1,98 @@
+@import "../../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/buttons";
+
+// Alternate buttons
+// --------------------------------------------------
+
+.btn-default {
+  @include button-variant($btn-default-color, $btn-default-bg, $btn-default-border);
+}
+
+.btn-invert {
+  @include button-variant($btn-invert-color, $btn-invert-bg, $btn-invert-border, $btn-invert-hover-color,  $btn-invert-hover-bg);
+}
+
+
+// Link buttons
+// -------------------------
+
+// Make a button look and behave like a link
+.btn-link {
+  color: $link-color;
+  font-weight: normal;
+  border-radius: 0;
+
+  &,
+  &:active,
+  &.active,
+  &[disabled],
+  fieldset[disabled] & {
+    background-color: transparent;
+    @include box-shadow(none);
+  }
+  &,
+  &:hover,
+  &:focus,
+  &:active {
+    border-color: transparent;
+  }
+  &:hover,
+  &:focus {
+    color: $link-hover-color;
+    text-decoration: $link-hover-decoration;
+    background-color: transparent;
+  }
+  &[disabled],
+  fieldset[disabled] & {
+    &:hover,
+    &:focus {
+      color: $btn-link-disabled-color;
+      text-decoration: none;
+    }
+  }
+}
+
+
+// Button Sizes
+// --------------------------------------------------
+
+.btn-lg {
+  // line-height: ensure even-numbered height of button next to large input
+  @include button-size($padding-large-vertical, $padding-large-horizontal, $font-size-large, $line-height-large, $border-radius-large);
+}
+.btn-sm {
+  // line-height: ensure proper height of button next to small input
+  @include button-size($padding-small-vertical, $padding-small-horizontal, $font-size-small, $line-height-small, $border-radius-small);
+}
+.btn-xs {
+  @include button-size($padding-xs-vertical, $padding-xs-horizontal, $font-size-small, $line-height-small, $border-radius-small);
+}
+
+
+// Block button
+// --------------------------------------------------
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+// Vertically space out multiple block buttons
+.btn-block + .btn-block {
+  margin-top: 5px;
+}
+
+// Specificity overrides
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  &.btn-block {
+    width: 100%;
+  }
+}
+
+
+// Alias Magento's button class to Bootstraps
+.button, button {
+    @extend .btn;
+    @extend .btn-default;
+}

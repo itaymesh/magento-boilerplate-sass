@@ -1,0 +1,43 @@
+@import "../../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/type";
+
+h1, .h1 {}
+h2, .h2 {}
+h3, .h3 {}
+h4, .h4 {}
+h5, .h5 {}
+h6, .h6 {}
+
+.page-title {
+    @include clearfix();
+    @extend .page-header;
+    margin-top: 0;
+
+    .separator {
+        margin: 0 3px;
+    }
+
+    .link-rss {
+        float: right;
+        margin: 7px 0 0;
+    }
+}
+
+.title-buttons {
+    text-align: right;
+
+    h1, h2, h3,
+    h4, h5, h6 {
+        float: left;
+    }
+}
+
+.subtitle,
+.sub-title {
+    color: $headings-small-color;
+}
+
+
+ul,
+ol {
+  margin-bottom: 0;
+}

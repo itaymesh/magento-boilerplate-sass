@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<layout>
+    <default>
+        <reference name="top.links">
+            <block type="core/template" name="boilerplate_search_top_form"
+                   template="boilerplate/core/catalogsearch/toplink.phtml"/>
+            <action method="addLinkBlock">
+                <blockName>boilerplate_search_top_form</blockName>
+            </action>
+        </reference>
+        <reference name="header">
+            <action method="unsetChild">
+                <alias>topSearch</alias>
+            </action>
+        </reference>
+    </default>
+    <catalogsearch_result_index>
+    </catalogsearch_result_index>
+    <catalogsearch_advanced_index>
+    </catalogsearch_advanced_index>
+</layout>

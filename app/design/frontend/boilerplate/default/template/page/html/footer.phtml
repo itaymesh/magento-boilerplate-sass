@@ -24,9 +24,27 @@
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
-<div class="container">
-    <footer role="contentinfo">
-        <?php echo $this->getChildHtml() ?>
-        <address><?php echo $this->getCopyright() ?></address>
-    </footer>
-</div>
+<footer role="contentinfo">
+
+	<div class="container container-padding-less">
+		<div class="footer-top">
+			<?php echo $this->getChildHtml( 'footer_social_links' ); ?>
+
+			<?php echo $this->getChildHtml( 'footer.newsletter' ); ?>
+			<div class="footer-gift-card">
+				<a href="<?php echo $this->getUrl( 'gift-card' ); ?>"><img
+						src="<?php echo $this->getSkinUrl( 'dist/img/giftcard.png' ); ?>"
+						alt="<?php echo $this->__( 'Gift Card' ); ?>"/></a>
+			</div>
+		</div>
+	</div>
+	<div class="footer-bottom">
+		<div class="container">
+			<div class="copyright"><?php echo $this->getCopyright() ?></div>
+			<div class="bottom-links links"><?php echo $this->getChildHtml( 'footer_menu' ); ?></div>
+			<div class="security"><i class="icon-lock"></i><?php echo $this->__( 'Your shopping safe and secure' ); ?>
+			</div>
+		</div>
+	</div>
+</footer>
+

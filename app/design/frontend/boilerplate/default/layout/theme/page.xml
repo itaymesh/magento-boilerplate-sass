@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<layout>
+    <default>
+        <reference name="header">
+            <block type="core/template" name="masthead" template="page/html/header/masthead.phtml" />
+        </reference>
+        <reference name="top.links">
+            <action method="setClassName"><value>navbar-nav nav navbar-toplinks</value></action>
+        </reference>
+    </default>
+
+</layout>

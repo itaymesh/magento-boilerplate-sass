@@ -1,0 +1,177 @@
+<widget>
+    <prior_banner_block type="boilerplate_widget/banner" translate="label description"
+                        module="boilerplate_widget">
+        <name>Banner</name>
+        <description>A Banner Block Widget</description>
+        <parameters>
+            <image>
+                <label>Image</label>
+                <required>1</required>
+                <visible>1</visible>
+                <type>widgetimagechooser/chooser</type>
+                <sort_order>30</sort_order>
+            </image>
+            <title>
+                <label>Title</label>
+                <visible>1</visible>
+                <type>text</type>
+                <sort_order>1</sort_order>
+            </title>
+            <link_text>
+                <label>Link text</label>
+                <visible>1</visible>
+                <required>1</required>
+                <type>text</type>
+                <sort_order>1</sort_order>
+            </link_text>
+            <css_class translate="label">
+                <visible>1</visible>
+                <label>Widget element CSS class</label>
+                <type>text</type>
+            </css_class>
+            <url>
+                <label>Url</label>
+                <required>1</required>
+                <visible>1</visible>
+                <type>text</type>
+                <sort_order>10</sort_order>
+                <description>relative url (in http://domain.com/page.html only page.html)</description>
+            </url>
+            <template translate="label">
+                <label>Template</label>
+                <visible>1</visible>
+                <type>text</type>
+                <value>boilerplate/core/widget/banner.phtml</value>
+            </template>
+        </parameters>
+    </prior_banner_block>
+    <catalog_category_product_list type="boilerplate_widget/catalog_product_list" translate="name description" module="boilerplate_widget">
+        <name>Catalog Category Product Carousel</name>
+        <description>Create a carousel of product based on category</description>
+        <is_email_compatible>1</is_email_compatible>
+        <parameters>
+
+            <products_count translate="label">
+                <required>1</required>
+                <visible>1</visible>
+                <value>10</value>
+                <label>Total Number of products</label>
+                <type>text</type>
+            </products_count>
+
+            <products_per_page translate="label">
+                <required>1</required>
+                <visible>1</visible>
+                <value>5</value>
+                <label>Visible Products Per Slides</label>
+                <type>text</type>
+               <!--<depends><show_pager><value>1</value></show_pager></depends>-->
+            </products_per_page>
+            <image_width>
+                <required>1</required>
+                <visible>1</visible>
+                <value>270</value>
+                <label>Image width (number only)</label>
+                <type>text</type>
+            </image_width>
+            <image_height>
+                <required>1</required>
+                <visible>1</visible>
+                <value>270</value>
+                <label>Image height (number only)</label>
+                <type>text</type>
+            </image_height>
+            <timeout translate="label">
+                <required>1</required>
+                <visible>1</visible>
+                <value>5000</value>
+                <label>Carousel timeout (ms)</label>
+                <type>text</type>
+            </timeout>
+            <speed translate="label">
+                <required>1</required>
+                <visible>1</visible>
+                <value>400</value>
+                <label>Carousel speed (ms)</label>
+                <type>text</type>
+            </speed>
+            <show_navs translate="label">
+                <required>1</required>
+                <visible>1</visible>
+                <value>1</value>
+                <label>Show navigation arrows</label>
+                <type>select</type>
+                <source_model>adminhtml/system_config_source_yesno</source_model>
+            </show_navs>
+            <show_pager translate="label">
+                <required>1</required>
+                <visible>1</visible>
+                <value>1</value>
+                <label>Show pager</label>
+                <type>select</type>
+                <source_model>adminhtml/system_config_source_yesno</source_model>
+            </show_pager>
+            <paused translate="label">
+                <required>1</required>
+                <visible>1</visible>
+                <value>1</value>
+                <label>Paused</label>
+                <type>select</type>
+                <source_model>adminhtml/system_config_source_yesno</source_model>
+            </paused>
+
+
+            <!-- widget parameters -->
+            <id_path translate="label">
+                <visible>1</visible>
+                <required>1</required>
+                <label>Category</label>
+                <type>label</type>
+                <helper_block>
+                    <type>adminhtml/catalog_category_widget_chooser</type>
+                    <data>
+                        <button translate="open">
+                            <open>Select Category...</open>
+                        </button>
+                    </data>
+                </helper_block>
+                <sort_order>10</sort_order>
+            </id_path>
+            <title translate="label">
+                <visible>1</visible>
+                <required>1</required>
+                <label>Widget title</label>
+                <type>textarea</type>
+            </title>
+            <subtitle translate="label">
+                <visible>1</visible>
+                <label>Widget sub title</label>
+                <type>textarea</type>
+            </subtitle>
+            <css_class translate="label">
+                <visible>1</visible>
+                <label>Widget element CSS class</label>
+                <type>text</type>
+            </css_class>
+            <template>
+                <required>1</required>
+                <visible>1</visible>
+                <label>Template</label>
+                <type>text</type>
+                <value>boilerplate/core/widget/catalog/product/carousel.phtml</value>
+            </template>
+            <cache_lifetime translate="label description">
+                <label>Cache Lifetime (Seconds)</label>
+                <description>86400 by default, if not set. To refresh instantly, Clear the Blocks HTML Output Cache.</description>
+                <visible>1</visible>
+                <type>text</type>
+            </cache_lifetime>
+        </parameters>
+        <cache_lifetime translate="label description">
+            <label>Cache Lifetime (Seconds)</label>
+            <description>86400 by default, if not set. To refresh instantly, Clear the Blocks HTML Output Cache.</description>
+            <visible>1</visible>
+            <type>text</type>
+        </cache_lifetime>
+    </catalog_category_product_list>
+</widget>

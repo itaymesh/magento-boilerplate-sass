@@ -1,0 +1,21 @@
+<div class="masthead">
+	<div class="container">
+		<div class="masthead-right">
+			<?php echo $this->getChildHtml( 'masthead.block.right' ) ?>
+		</div>
+		<div class="masthead-middle">
+			<?php echo $this->getChildHtml( 'masthead.block.middle' ) ?>
+		</div>
+		<div class="masthead-help">
+			<div class="dropdown">
+				<a data-toggle="dropdown"  aria-expanded="true" href="#">
+					<?php echo $this->__( "need help?" ) ?>
+				</a>
+				<ul  class="dropdown-menu" role="menu">
+					<li><a href="tel:<?php echo Mage::getStoreConfig('general/store_information/phone'); ?>"><?php echo Mage::getStoreConfig('general/store_information/phone'); ?></a></li>
+					<li><a href="mailto:<?php echo Mage::getStoreConfig('contacts/email/recipient_email'); ?>"><?php echo Mage::getStoreConfig('contacts/email/recipient_email'); ?></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>

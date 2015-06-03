@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<layout>
+    <default>
+        <remove name="checkout_cart_link"/>
+        <reference name="top.links">
+            <block type="checkout/links" name="checkout_cart_link2">
+                <action method="addCartLink"></action>
+            </block>
+        </reference>
+    </default>
+</layout>

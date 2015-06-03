@@ -27,29 +27,42 @@
  * @var Mage_Page_Block_Html_Header $this
  */
 ?>
-<div class="container">
-    <header role="banner">
-        <?php if ($this->getIsHomePage()):?>
-        <h1 class="logo">
-            <strong><?php echo $this->getLogoAlt() ?></strong>
-            <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo">
-                <!--<img src="<?php /*echo $this->getLogoSrc() */?>" alt="<?php /*echo $this->getLogoAlt() */?>" />-->
-            </a>
-        </h1>
-        <?php else:?>
-        <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><strong><?php echo $this->getLogoAlt() ?></strong>
-            <!--<img src="<?php /*echo $this->getLogoSrc() */?>" alt="<?php /*echo $this->getLogoAlt() */?>" />-->
-        </a>
-        <?php endif?>
-        <div class="quick-access">
-            <div class="clearfix">
-                <?php echo $this->getChildHtml('topLinks') ?>
-                <?php echo $this->getChildHtml('store_language') ?>
-            </div>
-            <?php echo $this->getChildHtml('topSearch') ?>
-            <p class="welcome-msg"><?php echo $this->getWelcome() ?> <?php echo $this->getAdditionalHtml() ?></p>
-        </div>
-        <?php echo $this->getChildHtml('topContainer'); ?>
-    </header>
-</div>
-<?php echo $this->getChildHtml('topMenu') ?>
+
+<header role="banner">
+
+	<?php echo $this->getChildHtml( 'masthead' ); ?>
+
+	<div class="header-main">
+		<div class="header-main-inner">
+			<?php /*** LOGO **/ ?>
+			<div class="logo">
+				<?php if ($this->getIsHomePage()): ?>
+				<h1>
+					<?php endif; ?>
+					<a href="<?php echo $this->getUrl( '' ) ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo">
+						<img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>"/>
+					</a>
+					<?php if ($this->getIsHomePage()): ?>
+				</h1>
+			<?php endif; ?>
+			</div>
+
+			<?php /*** ACCESS MENU **/ ?>
+			<div class="quick-access">
+				<?php echo $this->getChildHtml( 'topLinks' ) ?>
+				<?php echo $this->getChildHtml( 'store_language' ) ?>
+
+				<?php echo $this->getChildHtml( 'topSearch' ) ?>
+			</div>
+
+			<?php /*** NAV BAR **/ ?>
+			<?php echo $this->getChildHtml( 'topMenu' ) ?>
+
+			<?php echo $this->getChildHtml( 'topContainer' ); ?>
+		</div>
+	</div>
+	<div class="breadcrumbs-container">
+		<?php echo $this->getChildHtml( 'breadcrumbs' ) ?>
+	</div>
+</header>
+

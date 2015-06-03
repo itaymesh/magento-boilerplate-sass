@@ -1,0 +1,68 @@
+@import "../../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/scaffolding";
+
+body {
+  direction: ltr;
+}
+
+/* make layout 100% height */
+html,
+body {
+  height: 100%;
+}
+.wrapper {
+  min-height: 100%;
+  position: relative;
+}
+
+.main-content {
+  padding-bottom: 280px;
+}
+footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+
+
+.page-popup {
+  padding: $grid-gutter-width;
+}
+
+
+.layout {
+  @include make-row();
+
+  &.layout-1-col div[role="main"] {
+    @include make-md-column(12);
+  }
+
+  &.layout-2-cols {
+    div[role="main"] {
+      @include make-md-column(9);
+    }
+
+  }
+  &.layout-3-cols {
+    div[role="main"] {
+      @include make-md-column(6);
+    }
+
+  }
+}
+
+// Main
+div[role="main"] {
+  //@include make-md-column(12);
+  //margin-bottom: $line-height-computed;
+}
+
+// Sidebar(s)
+aside[role="complementary"] {
+  @include make-md-column(3);
+  //display: none;
+  margin-bottom: $line-height-computed;
+  @media (min-width: $screen-md) {
+    //display: block;
+  }
+}

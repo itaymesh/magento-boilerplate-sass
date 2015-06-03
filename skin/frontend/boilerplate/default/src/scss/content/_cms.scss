@@ -1,0 +1,91 @@
+// GLOBAL EXTENDS
+.page-hr {
+  border-top: 1px solid $black;
+}
+
+// HOME PAGE
+.home-container {
+  @extend .page-hr;
+  padding-top: 30px;
+  margin-top: 20px;
+}
+
+.home-gallery {
+  text-align: center;
+  .gallery-title {
+    margin-top: 0;
+    margin-bottom: .2em;
+  }
+  .gallery-subtitle {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .slideshow-wrapper {
+    margin-top: 20px;
+  }
+}
+
+.home-instagram-gallery {
+  max-width: 616px;
+}
+
+.home-celebs-gallery {
+  max-width: 453px;
+}
+
+#slideshow-slides-home-wrapper {
+
+  .slideshow-nav {
+    display: none;
+    font-size: 24px;
+  }
+  &:hover {
+    .slideshow-nav {
+      display: block;
+    }
+  }
+
+  @extend .slidesshow-nav-pos-sides;
+}
+
+.widget-product-carousel-home {
+  padding-top: 20px;
+  @extend .page-hr;
+  .widget-title {
+    text-align: center;
+  }
+  .slideshow-wrapper {
+    @extend .slidesshow-nav-pos-sides;
+  }
+  .slideshow {
+    margin: 0 4%;
+  }
+  .slide-inner {
+    margin: 0 5%;
+  }
+  .slideshow-nav {
+    font-size: 20px;
+  }
+}
+.home-grid {
+
+  @include make-row(20px);
+
+  .widget-banner {
+    img {
+      @include img-responsive;
+    }
+  }
+
+  .widget-col-1 {
+    @include make-sm-column(3, 20px);
+  }
+  .home-grid-carousel {
+    width: 300px;
+    //@include make-sm-column(4, 20px);
+  }
+  .home-grid-widget {
+    float: right;
+
+  }
+}

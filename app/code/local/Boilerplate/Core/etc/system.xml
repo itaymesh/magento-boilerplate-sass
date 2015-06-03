@@ -1,0 +1,138 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <boilareplate translate="label">
+            <label>Cala</label>
+            <sort_order>00</sort_order>
+        </boilareplate>
+    </tabs>
+
+    <sections>
+        <boilareplate translate="label" module="boilerplate_core">
+            <label>Design</label>
+            <tab>boilareplate</tab>
+            <sort_order>0</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <newsletter translate="label">
+                    <label>Newsletter</label>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <fields>
+                        <footer_title translate="label">
+                            <label>Footer Title</label>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </footer_title>
+                    </fields>
+                </newsletter>
+                <social_links>
+                    <label>Social Links</label>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <fields>
+                        <title translate="label">
+                            <label>Block Title</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </title>
+                        <pinterest translate="label">
+                            <label>Pinterest</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </pinterest>
+                        <facebook translate="label">
+                            <label>Facebook</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </facebook>
+                        <instagram translate="label">
+                            <label>Instagram</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </instagram>
+                    </fields>
+                </social_links>
+                <instagram>
+                    <label>Instagram</label>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <fields>
+                        <title translate="label">
+                            <label>Block Title</label>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </title>
+                        <subtitle translate="label">
+                            <label>Block Sub Title</label>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </subtitle>
+                        <account translate="label">
+                            <label>Pinterest</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </account>
+                    </fields>
+                </instagram>
+                <celebs>
+                    <label>Celebs</label>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <fields>
+                        <title translate="label">
+                            <label>Block Title</label>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </title>
+                        <subtitle translate="label">
+                            <label>Block Sub Title</label>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </subtitle>
+                    </fields>
+                </celebs>
+            </groups>
+        </boilareplate>
+    </sections>
+</config>

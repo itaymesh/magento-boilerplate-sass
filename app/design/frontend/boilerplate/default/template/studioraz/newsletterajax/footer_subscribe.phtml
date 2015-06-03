@@ -1,0 +1,61 @@
+<div class="footer-newsletter">
+
+
+
+	<form action="<?php echo $this->getFormActionUrl(); ?>" method="post" id="<?php echo $this->getFormId(); ?>"
+	      class="form newsletter-form">
+		<h4><?php echo Mage::getStoreConfig('boilareplate/newsletter/footer_title'); ?></h4>
+		<div class="input-group input-group-lg">
+			<input placeholder="<?php echo $this->__( 'Email Address' ); ?>" type="text" name="email" id="newsletter"
+			       title="<?php echo $this->__( 'Email Address' ) ?>"
+			       class="input-text required-entry validate-email input-lg"/>
+
+            <span class="input-group-btn">
+                <button type="submit"
+                        title="<?php echo $this->__( 'Submit' ) ?>" class="btn btn-default btn-lg">
+	                <?php echo $this->__( 'Submit' ) ?></button>
+	            </span>
+		</div>
+
+		<img class="ajax-loader" style="display: none;"
+		     src="<?php echo $this->getSkinUrl( 'images/ajax-loader.gif' ); ?>"
+		     alt=""/>
+
+		<p class="ajax-message" style="display: none;"></p>
+	</form>
+</div>
+
+<script type="text/javascript">
+	//<![CDATA[
+	(function ($) {
+
+		$('#<?php echo $this->getFormId(); ?>').on({
+			beforeAjaxCall: function (e, obj) {
+				obj.element.find('.ajax-loader').show();
+				obj.element.find('.ajax-message').hide();
+			},
+
+			ajaxSuccess: function (e, obj, respond) {
+				obj.element.find('.ajax-loader').hide();
+
+				var messageElement = obj.element.find('.ajax-message');
+
+
+				if (respond.status == 'success') {
+					messageElement.removeClass('error').addClass('text-success');
+				}
+				else {
+					messageElement.addClass('error').removeClass('text-success');
+				}
+
+				messageElement.html(respond.message).show();
+			},
+
+			ajaxFailed: function (e, obj, respond) {
+				obj.element.find('.ajax-loader').hide();
+			}
+		}).newsletterAjax();
+
+	})(jQuery);
+	//]]>
+</script>

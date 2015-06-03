@@ -1,0 +1,28 @@
+/* ================================================= *
+ * General Product List Styles (not module-specific)
+ * ================================================= */
+
+// This mixin outputs the styles to allow for grids with more than 3 columns
+@mixin make-product-grid($max-column-count, $column-count, $class-append: "") {
+
+  // Allow this mixin to be used for more specific purposes, such as grids contained within widgets
+  @if $class-append != "" {
+    $class-append: -#{$class-append};
+  }
+
+  $percent : $grid-columns / $column-count;
+
+  .products-grid--max-#{$max-column-count}-col#{$class-append} {
+
+    .item {
+      @include make-xs-column($percent, 20px);
+
+      &:nth-child(#{$column-count}n+1) {
+        clear: both;
+      }
+      &:not(:nth-child(#{$column-count}n+1)) {
+        clear: none;
+      }
+    }
+  }
+}
