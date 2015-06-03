@@ -200,8 +200,9 @@ publish
 /skin/frontend/boilerplate/default/*
 !/skin/frontend/boilerplate/default/*
 !/skin/frontend/boilerplate/default/src/*
-/skin/frontend/boilerplate/default/dist
+/skin/frontend/boilerplate/default/dist/
 
+/js/boilerplate/libs.js
 
 # ==================================== #
 # Part E: ignore modman folder   #

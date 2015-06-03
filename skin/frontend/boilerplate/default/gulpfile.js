@@ -81,7 +81,7 @@ gulp.task('js.libs', function () {
 
         //selectboxit
         //http://gregfranko.com/jquery.selectBoxIt.js/
-        'bower_components/jquery-selectboxit/src/javascripts/jquery.selectBoxIt.min.js',
+        //'bower_components/jquery-selectboxit/src/javascripts/jquery.selectBoxIt.min.js',
 
 
         // #######################################################
