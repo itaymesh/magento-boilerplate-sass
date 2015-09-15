@@ -77,23 +77,58 @@
                 <block type="page/js_cookie" name="js_cookies" template="page/js/cookie.phtml"/>
 
                 <!--########## add boilerplate static files #################-->
-                <action method="addJs">
+                <!--<action method="addJs">
                     <script>boilerplate/libs.js</script>
+                </action>-->
+
+                <!-- Theme JS Scripts -->
+                <action method="addItem">
+                    <type>skin_js</type>
+                    <name>dist/scripts/jquery.js</name>
                 </action>
 
+                <action method="addItem">
+                    <type>skin_js</type>
+                    <name>dist/scripts/jquery-plugins.js</name>
+                </action>
 
-                <!-- Theme assets -->
+                <action method="addItem">
+                    <type>skin_js</type>
+                    <name>dist/scripts/jquery-ui.js</name>
+                </action>
+
+                <action method="addItem">
+                    <type>skin_js</type>
+                    <name>dist/scripts/jquery-cycle2.js</name>
+                </action>
+
+                <action method="addItem">
+                    <type>skin_js</type>
+                    <name>dist/scripts/bootstrap.js</name>
+                </action>
+
+                <action method="addItem">
+                    <type>skin_js</type>
+                    <name>dist/scripts/main.js</name>
+                </action>
+
+                <!-- Theme CSS Stylesheet -->
+
+                <!-- LTR -->
                 <action method="addCss">
-                    <stylesheet>dist/css/style-rtl.css</stylesheet>
+                    <stylesheet>dist/styles/main.css</stylesheet>
                 </action>
+                <!-- RTL -->
+                <!-- uncomment to use on RTL theme projects -->
+                <!--
+                <action method="addCss">
+                    <stylesheet>dist/styles/main-rtl.css</stylesheet>
+                </action>
+                -->
 
                 <!-- Fonts -->
                 <!-- imported via _fonts.scss file -->
 
-                <action method="addItem">
-                    <type>skin_js</type>
-                    <name>dist/js/script.js</name>
-                </action>
 
                 <!-- Add additioanl child blocks -->
                 <block type="core/template" name="boilerplate.head.meta"

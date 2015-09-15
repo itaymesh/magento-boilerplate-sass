@@ -19,8 +19,13 @@
         "imagesloaded": "~3",
         "jquery-cycle2": "~2",
         "jquery-ui": "~1",
-        "magnific-popup": "~0.9.9",
+        "magnific-popup": "~1",
         "spinjs": "~2",
         "enquire": "~2"
+    },
+    "overrides": {
+        "imagesloaded" : {
+            "main" : ["./imagesloaded.pkgd.min.js"]
+        }
     }
 }

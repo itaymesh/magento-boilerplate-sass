@@ -1,7 +1,6 @@
 var screenTablet = false;
 var screenDesktop = false;
 
-
 // =============================================
 // Primary Break Points
 // =============================================

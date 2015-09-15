@@ -1,0 +1,51 @@
+{
+  "dependencies": {
+    "main.css": {
+      "files": [
+        "styles/main.scss"
+      ],
+      "main": true
+    },
+    "jquery.js": {
+      "bower": [
+        "jquery"
+      ]
+    },
+    "jquery-plugins.js": {
+      "bower": [
+        "imagesloaded",
+        "magnific-popup",
+        "enquire"
+      ]
+    },
+    "jquery-ui.js": {
+      "files": [
+        "../bower_components/jquery-ui/ui/core.js",
+        "../bower_components/jquery-ui/ui/widget.js",
+        "../bower_components/jquery-ui/ui/button.js",
+        "../bower_components/jquery-ui/ui/accordion.js"
+      ]
+    },
+    "jquery-cycle2.js": {
+      "files": [
+        "../bower_components/jquery-cycle2/build/jquery.cycle2.js",
+        "../bower_components/jquery-cycle2/build/plugin/jquery.cycle2.carousel.min.js",
+        "../bower_components/jquery-cycle2/build/plugin/jquery.cycle2.swipe.js"
+      ]
+    },
+    "bootstrap.js": {
+      "files": [
+        "../bower_components/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js"
+      ]
+    },
+    "main.js": {
+      "files": [
+        "scripts/plugins.js",
+        "scripts/scripts.js"
+      ]
+    }
+  },
+  "config": {
+    "devUrl": "http://dev.dev-sass"
+  }
+}

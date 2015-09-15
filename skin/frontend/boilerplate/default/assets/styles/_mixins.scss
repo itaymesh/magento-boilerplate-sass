@@ -43,12 +43,12 @@
 /* ============================================ *
  * Bootstrap overrided mixin
  * ============================================ */
-@import "../scss/mixins/bootstrap/buttons";
-@import "../scss/mixins/links";
-@import "../scss/mixins/images";
-@import "../scss/mixins/arrow";
-@import "../scss/mixins/fonts";
-@import "../scss/mixins/not-selectable";
+@import "mixins/bootstrap/buttons";
+@import "mixins/links";
+@import "mixins/images";
+@import "mixins/arrow";
+@import "mixins/fonts";
+@import "mixins/not-selectable";
 
 /* ============================================ *
  * Magento mixins
