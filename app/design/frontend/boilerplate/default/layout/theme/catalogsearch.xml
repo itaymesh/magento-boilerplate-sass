@@ -2,20 +2,36 @@
 <layout>
     <default>
         <reference name="top.links">
+            <!--
             <block type="core/template" name="boilerplate_search_top_form"
                    template="boilerplate/core/catalogsearch/toplink.phtml"/>
             <action method="addLinkBlock">
                 <blockName>boilerplate_search_top_form</blockName>
             </action>
+            -->
         </reference>
+
+        <!-- uncomment if you need to remove default search form location -->
+        <!--
         <reference name="header">
             <action method="unsetChild">
                 <alias>topSearch</alias>
             </action>
         </reference>
+        -->
     </default>
+
     <catalogsearch_result_index>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>page/2columns-left.phtml</template>
+            </action>
+        </reference>
+        <reference name="left">
+            <remove name="tags_popular"/>
+            <remove name="left.newsletter"/>
+            <remove name="left.permanent.callout"/>
+        </reference>
     </catalogsearch_result_index>
-    <catalogsearch_advanced_index>
-    </catalogsearch_advanced_index>
+
 </layout>

@@ -208,3 +208,8 @@ publish
 # Part E: ignore modman folder   #
 # ==================================== #
 /.modman
+
+# ====================================############# #
+# Ignore rwd Magneto theme (for dev purposes only)
+# ====================================############### #
+/skin/frontend/rwd

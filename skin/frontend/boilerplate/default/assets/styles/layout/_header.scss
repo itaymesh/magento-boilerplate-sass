@@ -1,10 +1,14 @@
 header[role="banner"] {
 
+
+  // header containers
+  .header-container {
+    @extend .container;
+  }
+
+  // header wrappers
   .header-main {
     border-bottom: 1px solid $border-color;
-    .header-main-inner {
-      @extend .container;
-    }
 
     .quick-access {
 
@@ -12,82 +16,30 @@ header[role="banner"] {
   }
 
   .breadcrumbs-container {
-    @extend .container;
-  }
 
+  }
 
   @media (min-width: $screen-sm) {
     .form-language {
-      float: left;
-      width: 160px;
-
       .form-control {
-        width: 120px;
       }
     }
     .links {
-      float: right;
-      line-height: $input-height-small; // Line up with template switcher to left
-    }
-    .form-search {
-      @include clearfix();
+
     }
   }
 
 }
 
-/** masthead: top header bar **/
-.masthead {
-  background-color: $black;
-  height: 30px;
-  line-height: 30px;
-  .container {
-    position: relative;
-  }
-  p {
-    margin: 0;
-  }
-  a {
-    color: $white;
-  }
-  > a {
-    color:$white;
-  }
-  &-right,&-help {
-    position: absolute;
-    z-index: 1;
-    top:0;
-  }
-  &-right {
 
-    left:0;
-    a {
-      color: $blue;
-    }
-  }
-  &-middle {
-    text-align: center;
-  }
 
-  // help block with help dropdown
-  &-help {
-    right:0;
-    .open {
-      > a {
-        text-decoration: underline;
-      }
-    }
-    .dropdown-menu {
-      white-space: nowrap;
-      left:auto;
-      right:0;
-      padding: 10px 20px;
-      li {
-        display: table-cell;
-      }
-    }
-  }
+
+/** MASTHEAD **/
+.header-masthead {
+
 }
+
+/** MAIN **/
 .header-main {
   .logo {
     h1 {
@@ -95,50 +47,38 @@ header[role="banner"] {
       font-size: $font-size-base;
     }
   }
-  
+
   @media (min-width: $grid-float-breakpoint) {
     margin-top: 20px;
     padding-bottom: 5px;
     margin-bottom: 5px;
     .logo {
-      margin-top: -3px;
+
       line-height: 1;
       position: relative;
       z-index: 1;
+      float: left;
     }
-    .logo {
+
+    #search_mini_form {
       float: right;
     }
+
     .quick-access {
-      float: left;
-      position: relative;
-      z-index: 1000;
+      float: right;
+      clear: right;
     }
 
 
-  /*  .navbar-main {
-
-      .navbar-nav {
-        float: none;
-        > li {
-          display: inline-block;
-          float: none;
-        }
-      }
-    }*/
   }
-
 }
 
 // Quick Access
 .quick-access {
   .top-link-cart {
-    @include make-fontello-icon('\e802', after);
-    span {
-      //@extend .sr-only;
-    }
+    @include make-fontello-icon('\e804', before);
   }
   .top-links-wishlist {
-    @include make-fontello-icon('\e80b', after);
+    @include make-fontello-icon('\e806', before);
   }
 }

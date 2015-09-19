@@ -18,8 +18,6 @@ var bp = {
 }
 
 
-
-
 enquire.register("screen and (max-width:992px)", {
     match: function () {
         //console.log('screen tablet');
@@ -109,8 +107,6 @@ enquire.register("screen and (min-width:992px)", {
     });
 
 })(jQuery);
-
-var $j = jQuery.noConflict();
 
 jQuery(document).ready(function ($) {
     /**

@@ -1,11 +1,34 @@
-.top-links-search {
-  > a {
-    i {
-      font-size: .8em;
-    }
+/* ============================================ *
+ * Search Input
+ * ============================================ */
+
+#search_mini_form .input-box {
+  position: relative;
+  padding-top: 0;
+}
+
+#search_mini_form label {
+  display: none;
+}
+
+#search {
+  width: 100%;
+  padding-right: 40px;
+}
+
+#search_mini_form .search-button {
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 0;
+  background: none;
+
+  // hide button text
+  span {
+    display: none;
   }
-  .input-text {
-    width: 200px;
-  }
+  // add button search
+  @include make-fontello-icon('\e803');
 
 }

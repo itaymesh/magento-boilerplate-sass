@@ -8,4 +8,13 @@
             </block>
         </reference>
     </default>
+
+    <!--######################  SUCCESS PAGE #########################-->
+    <checkout_onepage_success>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>page/1column.phtml</template>
+            </action>
+        </reference>
+    </checkout_onepage_success>
 </layout>

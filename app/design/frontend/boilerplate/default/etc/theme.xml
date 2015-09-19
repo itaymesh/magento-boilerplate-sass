@@ -21,6 +21,9 @@
             <boilareplate_default_checkout>
                 <file>theme/checkout.xml</file>
             </boilareplate_default_checkout>
+            <boilareplate_default_contacts>
+                <file>theme/contacts.xml</file>
+            </boilareplate_default_contacts>
         </updates>
     </layout>
 </theme>

@@ -1,23 +1,6 @@
 <?xml version="1.0"?>
 <layout>
     <default>
-        <reference name="masthead">
-            <block type="cms/block" name="masthead.block.right">
-                <action method="setBlockId">
-                    <blockId>masthead_block_right</blockId>
-                </action>
-            </block>
-            <block type="cms/block" name="masthead.block.middle">
-                <action method="setBlockId">
-                    <blockId>masthead_block_middle</blockId>
-                </action>
-            </block>
-            <block type="cms/block" name="masthead.block.left">
-                <action method="setBlockId">
-                    <blockId>masthead_block_left</blockId>
-                </action>
-            </block>
-        </reference>
         <reference name="footer">
             <block type="core/template" name="footer_social_links"
                    template="boilerplate/page/html/footer/social.phtml"/>
@@ -29,6 +12,11 @@
         </reference>
     </default>
     <cms_index_index>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>page/1column.phtml</template>
+            </action>
+        </reference>
         <reference name="content">
             <block name="home.slideshow" type="ibanners/view">
                 <action method="setGroupCode">

@@ -38,6 +38,20 @@
   @include make-product-grid(4, 4);
 }
 
+/* ============================ *
+ * 5 columns max + widget
+ * ============================ */
+
+@include make-product-grid(5, 2, "widget");
+
+@media(min-width: $screen-tablet) {
+  @include make-product-grid(5, 3, "widget");
+}
+
+@media(min-width: $screen-desktop) {
+  @include make-product-grid(5, 5, "widget");
+}
+
 
 // product item
 

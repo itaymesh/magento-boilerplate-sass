@@ -112,7 +112,13 @@
                     <name>dist/scripts/main.js</name>
                 </action>
 
-                <!-- Theme CSS Stylesheet -->
+                <!-- Magento RWD theme JS -->
+                <action method="addItem">
+                    <type>skin_js</type>
+                    <name>dist/scripts/rwd.js</name>
+                </action>
+
+                <!-- ############# Theme CSS Stylesheet ########## -->
 
                 <!-- LTR -->
                 <action method="addCss">
@@ -126,19 +132,15 @@
                 </action>
                 -->
 
-                <!-- Fonts -->
-                <!-- imported via _fonts.scss file -->
-
+                <!-- ############ Fonts ############# -->
+                <!-- Fontello -->
+                <action method="addCss">
+                    <stylesheet>vendor/fontello/css/fontello.css</stylesheet>
+                </action>
 
                 <!-- Add additioanl child blocks -->
                 <block type="core/template" name="boilerplate.head.meta"
                        template="boilerplate/page/html/head/meta.phtml"/>
-
-                <block type="core/text" name="jquery.noconflict">
-                    <action method="setText">
-                        <text><![CDATA[<script>jQuery.noConflict();</script>]]></text>
-                    </action>
-                </block>
 
             </block>
 

@@ -27,13 +27,17 @@
  * @var Mage_Page_Block_Html_Header $this
  */
 ?>
-
 <header role="banner">
+	<?php if($masthead = $this->getChildHtml('masthead')):  ?>
+		<div class="header-wrapper header-masthead">
+			<div class="header-container">
+				<?php echo $masthead; ?>
+			</div>
+		</div>
+	<?php endif; ?>
 
-	<?php echo $this->getChildHtml( 'masthead' ); ?>
-
-	<div class="header-main">
-		<div class="header-main-inner">
+	<div class="header-main header-wrapper">
+		<div class="header-container">
 			<?php /*** LOGO **/ ?>
 			<div class="logo">
 				<?php if ($this->getIsHomePage()): ?>
@@ -47,22 +51,33 @@
 			<?php endif; ?>
 			</div>
 
+			<?php /*** CATALOG SEARCH **/ ?>
+			<?php echo $this->getChildHtml( 'topSearch' ) ?>
+
 			<?php /*** ACCESS MENU **/ ?>
 			<div class="quick-access">
 				<?php echo $this->getChildHtml( 'topLinks' ) ?>
 				<?php echo $this->getChildHtml( 'store_language' ) ?>
-
-				<?php echo $this->getChildHtml( 'topSearch' ) ?>
 			</div>
 
-			<?php /*** NAV BAR **/ ?>
-			<?php echo $this->getChildHtml( 'topMenu' ) ?>
-
+			<?php /*** TOP CONTAINER **/ ?>
 			<?php echo $this->getChildHtml( 'topContainer' ); ?>
 		</div>
 	</div>
-	<div class="breadcrumbs-container">
-		<?php echo $this->getChildHtml( 'breadcrumbs' ) ?>
+
+	<?php /*** NAV BAR **/ ?>
+	<div class="header-nav header-wrapper">
+		<div class="header-container">
+			<?php echo $this->getChildHtml( 'topMenu' ) ?>
+		</div>
 	</div>
+
+	<?php /*** BREADCRUMBS **/ ?>
+	<?php if ($breadcrumbs = $this->getChildHtml( 'breadcrumbs' )): ?>
+		<div class="breadcrumbs-container header-container">
+			<?php echo $breadcrumbs; ?>
+		</div>
+	<?php endif; ?>
+
 </header>
 

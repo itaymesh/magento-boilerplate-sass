@@ -1,0 +1,15 @@
+/* -------------------------------------------- *
+ * Promotion Banner Section
+ */
+
+.promos {
+  @include make-row(10px);
+  li {
+    @include make-md-column(4, 10px);
+  }
+  img {
+    @include img-responsive();
+  }
+}
+
+

@@ -26,20 +26,32 @@
 ?>
 <footer role="contentinfo">
 
-	<div class="container container-padding-less">
-		<div class="footer-top">
-			<?php echo $this->getChildHtml( 'footer_social_links' ); ?>
 
-			<?php echo $this->getChildHtml( 'footer.newsletter' ); ?>
+	<div class="footer-container container">
+		<div class="footer-top">
+			<?php echo $this->getChildHtml() ?>
+		</div>
+		<div class="footer-bottom">
+			<address class="copyright"><?php echo $this->getCopyright() ?></address>
+		</div>
+	</div>
+
+
+
+	<!--<div class="container container-padding-less">
+		<div class="footer-top">
+			<?php /*echo $this->getChildHtml( 'footer_social_links' ); */?>
+
+			<?php /*echo $this->getChildHtml( 'footer.newsletter' ); */?>
 		</div>
 	</div>
 	<div class="footer-bottom">
 		<div class="container">
-			<div class="copyright"><?php echo $this->getCopyright() ?></div>
-			<div class="bottom-links links"><?php echo $this->getChildHtml( 'footer_menu' ); ?></div>
-			<div class="security"><i class="icon-lock"></i><?php echo $this->__( 'Your shopping safe and secure' ); ?>
+			<div class="copyright"><?php /*echo $this->getCopyright() */?></div>
+			<div class="bottom-links links"><?php /*echo $this->getChildHtml( 'footer_menu' ); */?></div>
+			<div class="security"><i class="icon-lock"></i><?php /*echo $this->__( 'Your shopping safe and secure' ); */?>
 			</div>
 		</div>
-	</div>
+	</div>-->
 </footer>
 

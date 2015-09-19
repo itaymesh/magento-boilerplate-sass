@@ -1,12 +1,47 @@
 <?xml version="1.0"?>
 <layout>
     <default>
+        <!-- ### ROOT ### -->
+        <reference name="root">
+            <!-- add layout default class name to body -->
+            <action method="addBodyClass">
+                <className>layout-default</className>
+            </action>
+        </reference>
+
+        <!-- ### MASTHEAD BLOCK -->
         <reference name="header">
-            <block type="core/template" name="masthead" template="page/html/header/masthead.phtml" />
+            <block type="core/text_list" name="masthead" as="masthead" translate="label">
+                <label>Header Masthead</label>
+            </block>
         </reference>
+
         <reference name="top.links">
-            <action method="setClassName"><value>navbar-nav nav navbar-toplinks</value></action>
+            <action method="setClassName">
+                <value>navbar-nav nav navbar-toplinks</value>
+            </action>
         </reference>
+
+        <!-- ### FOOTER ### -->
+        <reference name="footer">
+            <remove name="footer_links"/>
+            <remove name="cms_footer_links"/>
+        </reference>
+
     </default>
+
+    <!-- ################# PRINT ################### -->
+    <print>
+        <reference name="head">
+            <!-- Add our assets -->
+            <action method="addCss">
+                <stylesheet>css/style.css</stylesheet>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/script-ck.js</name>
+            </action>
+        </reference>
+    </print>
 
 </layout>

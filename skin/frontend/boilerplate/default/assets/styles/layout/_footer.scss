@@ -5,111 +5,67 @@ footer[role="contentinfo"] {
 
   > ul > li,
   .links li {
-    display: inline;
+
   }
 
   > ul,
   .links,
   .bugs,
   address {
-    color: $white;
+    //color: $white;
   }
 
-  @media (min-width: $screen-sm) {
-    > ul,
-    .links,
-    .bugs {
-      margin: 0;
-    }
-
-    > ul,
-    .bugs {
-      float: left;
-    }
-
-    .links {
-
-    }
-  }
 }
 
 .footer-bottom {
-  background-color: $black;
-  .container {
-    position: relative;
-  }
 
   .bottom-links {
-    text-align: center;
+
     a {
-      color: $white;
+
     }
   }
 
-  .copyright, .security {
-    color: $white;
-    position: absolute;
-    top: 0;
-  }
   .copyright {
-    right: 0;
-  }
-  .security {
-    left: 0;
+
   }
 }
 
 .footer-top {
-  @extend .page-hr;
-  @media (min-width: $grid-float-breakpoint) {
-    width: 100%;
-    padding: 40px 0 80px;
-    display: table;
-    .footer-gift-card,
-    .footer-newsletter,
-    .footer-social-links {
-      text-align: center;
-      display: table-cell;
-      vertical-align: middle;
-    }
-    .footer-gift-card {
-      width:25%;
-      //@include make-sm-column(3);
-    }
-    .footer-newsletter {
-      
-      width: 50%;
-      form {
-        width: 70%;
-        margin-left: auto;
-        margin-right: auto;
-      }
-      //@include make-sm-column(6);
-    }
-    .footer-social-links {
-      width:25%;
-      h4, ul, li {
-        display: inline-block;
-      }
-      h4 {
-        margin-right: 10px;
-      }
-      a {
-        color:$black;
-        font-size: 20px;
-        border-radius: 50%;
-        border-color:$white;
-        border-style: solid;
-        border-color: $black;
-        padding-top: .2em;
-        padding-bottom: .2em;
-        padding-left: .1em;
-        padding-right: .1em;
-        margin-right: 3px;
-        
-      }
-      //@include make-sm-column(3);
-    }
+
+  @include make-row();
+
+  .block-subscribe, .links {
+    @include make-md-column(2.4);
   }
 
+
+  // hide rwd social block
+  .social-media {
+    display: none;
+  }
+
+  .footer-gift-card,
+  .footer-newsletter,
+  .footer-social-links {
+
+  }
+  .footer-gift-card {
+
+  }
+  .block-subscribe {
+
+    form {
+
+    }
+  }
+  .footer-social-links {
+
+    a {
+
+      font-size: 20px;
+
+    }
+    //@include make-sm-column(3);
+  }
 }

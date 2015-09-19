@@ -1,5 +1,20 @@
 @import "../../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/alerts";
 
+/* -------------------------------------------- *
+ * Global Site Notice
+ */
+.global-site-notice {
+    @extend .alert;
+    @extend .alert-warning;
+    .notice-inner {
+        @extend .container;
+    }
+    p {
+        margin:0;
+    }
+}
+
+
 .success {
     color: $state-success-text;
 }
@@ -32,14 +47,4 @@
 .note-msg,
 .notice-msg {
     @extend .alert-info;
-}
-
-// Global notices
-.global-site-notice {
-    @extend .alert;
-    @extend .alert-warning;
-
-    p {
-        margin: 0;
-    }
 }

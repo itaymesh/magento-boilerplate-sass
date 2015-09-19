@@ -40,8 +40,14 @@
     },
     "main.js": {
       "files": [
+        "scripts/jquery.no-conflict.js",
         "scripts/plugins.js",
         "scripts/scripts.js"
+      ]
+    },
+    "rwd.js": {
+      "vendor": [
+        "../../rwd/default/js/slideshow.js"
       ]
     }
   },

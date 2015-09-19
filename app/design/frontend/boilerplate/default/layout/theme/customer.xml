@@ -36,6 +36,5 @@
                 <url helper="customer/getRegisterUrl"/>
             </action>
         </reference>
-
     </default>
 </layout>
