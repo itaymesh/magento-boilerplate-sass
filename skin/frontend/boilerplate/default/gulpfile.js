@@ -19,6 +19,8 @@ var runSequence  = require('run-sequence');
 var sass         = require('gulp-sass');
 var sourcemaps   = require('gulp-sourcemaps');
 var uglify       = require('gulp-uglify');
+var cssflip      = require('gulp-css-flip');
+var rename       = require('gulp-rename');
 
 // See https://github.com/austinpray/asset-builder
 var manifest = require('asset-builder')('./assets/manifest.json');
@@ -100,7 +102,6 @@ var cssTasks = function(filename) {
         .pipe(autoprefixer, {
             browsers: [
                 'last 2 versions',
-                'ie 8',
                 'ie 9',
                 'android 2.3',
                 'android 4',

@@ -57,6 +57,7 @@
     }
   },
   "config": {
-    "devUrl": "http://dev.dev-sass"
+    "devUrl": "http://dev.dev-sass",
+    "flip" : true
   }
 }

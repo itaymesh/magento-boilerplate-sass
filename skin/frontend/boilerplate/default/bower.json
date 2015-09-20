@@ -15,7 +15,6 @@
     "dependencies": {
         "jquery" : "~2",
         "bootstrap-sass": "~3",
-        "font-awesome": "~4",
         "imagesloaded": "~3",
         "jquery-cycle2": "~2",
         "jquery-ui": "~1",
