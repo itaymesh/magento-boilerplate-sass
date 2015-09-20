@@ -54,11 +54,22 @@
 			<?php /*** CATALOG SEARCH **/ ?>
 			<?php echo $this->getChildHtml( 'topSearch' ) ?>
 
-			<?php /*** ACCESS MENU **/ ?>
-			<div class="quick-access">
-				<?php echo $this->getChildHtml( 'topLinks' ) ?>
-				<?php echo $this->getChildHtml( 'store_language' ) ?>
+
+
+			<div class="account-cart-wrapper">
+				<!-- Customer -->
+				<div class="header-customer dropdown">
+					<?php echo $this->getChildHtml('customer_head'); ?>
+				</div>
+
+				<!-- Cart -->
+				<div class="header-minicart dropdown">
+					<?php echo $this->getChildHtml('minicart_head'); ?>
+				</div>
+
 			</div>
+
+			<?php echo $this->getChildHtml( 'store_language' ) ?>
 
 			<?php /*** TOP CONTAINER **/ ?>
 			<?php echo $this->getChildHtml( 'topContainer' ); ?>

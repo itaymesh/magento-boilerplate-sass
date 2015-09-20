@@ -35,19 +35,24 @@
     },
     "bootstrap.js": {
       "files": [
-        "../bower_components/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js"
+        "scripts/dropdown-fix.js"
+      ],
+      "bower" : [
+        "bootstrap-hover-dropdown"
       ]
     },
     "main.js": {
       "files": [
         "scripts/jquery.no-conflict.js",
+        "scripts/menu-manager.js",
         "scripts/plugins.js",
-        "scripts/scripts.js"
+        "scripts/script.js"
       ]
     },
     "rwd.js": {
       "vendor": [
-        "../../rwd/default/js/slideshow.js"
+        "../../rwd/default/js/slideshow.js",
+        "../../rwd/default/js/minicart.js"
       ]
     }
   },

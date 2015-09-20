@@ -1,0 +1,6 @@
+<a href="<?php echo $this->helper('customer')->getAccountUrl(); ?>" data-hover="dropdown">
+	<?php echo $this->__('Account'); ?>
+</a>
+<div class="dropdown-menu">
+	<?php echo $this->getChildHtml( 'topLinks' ) ?>
+</div>

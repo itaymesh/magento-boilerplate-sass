@@ -152,7 +152,8 @@
                    template="page/html/notices.phtml"/>
 
             <block type="page/html_header" name="header" as="header">
-                <block type="page/template_links" name="top.links" as="topLinks"/>
+                <!-- moved to theme/customer.xml under customer_head block -->
+               <!-- <block type="page/template_links" name="top.links" as="topLinks"/>-->
                 <block type="page/switch" name="store_language" as="store_language"
                        template="page/switch/languages.phtml"/>
                 <block type="core/text_list" name="top.menu" as="topMenu" translate="label">

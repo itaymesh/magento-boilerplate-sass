@@ -12,19 +12,19 @@
 @import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/resize";
 @import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/responsive-visibility";
 @import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/size";
-@import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/tab-focus";
+@import "mixins/bootstrap/tab-focus";
 @import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/text-emphasis";
 @import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/text-overflow";
 @import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/vendor-prefixes";
 
 // Components
 @import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/alerts";
-// @import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/buttons";
+@import "mixins/bootstrap/buttons";
 @import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/panels";
 @import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/pagination";
 @import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/list-group";
 @import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/nav-divider";
-@import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/forms";
+@import "mixins/bootstrap/forms";
 @import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/progress-bar";
 @import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/table-row";
 
@@ -43,7 +43,6 @@
 /* ============================================ *
  * Bootstrap overrided mixin
  * ============================================ */
-@import "mixins/bootstrap/buttons";
 @import "mixins/links";
 @import "mixins/images";
 @import "mixins/arrow";

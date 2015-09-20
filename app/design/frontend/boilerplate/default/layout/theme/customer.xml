@@ -1,7 +1,13 @@
 <?xml version="1.0"?>
 <layout>
+    <default>
+        <reference name="header">
+            <block type="core/template" name="customer_head" template="customer/header/access.phtml">
+                <block type="page/template_links" name="top.links" as="topLinks"/>
+            </block>
+        </reference>
+    </default>
     <customer_account>
-
         <reference name="customer_account_navigation">
             <action method="removeLink">
                 <name>recurring_profiles</name>
