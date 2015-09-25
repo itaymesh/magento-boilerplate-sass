@@ -25,7 +25,6 @@ class Boilerplate_Social_Block_Links extends Mage_Core_Block_Template {
 	const XML_PATH_SOCIAL_LINKS = 'boilareplate/social_links';
 
 	public function hasLinks() {
-		return true;
 		return $this->getStoreConfig() && count($this->getStoreConfig()) > 1;
 	}
 
