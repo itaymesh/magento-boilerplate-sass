@@ -1,5 +1,5 @@
-# Magento Boilerplate
-### A HTML5 Twitter Bootstrap 3.1 Magento 1.8 Boilerplate Template
+# Magento SCSS Boilerplate
+### A HTML5 Twitter Bootstrap 3.4.5 Magento 1.9 Boilerplate Template
 
 Read the [blog post](http://www.webcomm.com.au/blog/2013/09/introducing-magento-boilerplate-a-twitter-bootstrap-3-powered-html5-mobile-first-starter-theme) or checkout the [demo](http://magentoboilerplate.webcomm.com.au) for more information.
 
@@ -25,7 +25,7 @@ Begin by creating a `composer.json` in the root of Magento, and ensure it has th
     ],
     "require": {
         "magento-hackathon/magento-composer-installer": "*",
-        "webcomm/magento-boilerplate": "dev-master"
+        "itaymesh/magento-boilerplate-scss": "dev-master"
     },
     "extra": {
         "magento-root-dir": "./",
