@@ -208,7 +208,6 @@
                 <block type="core/text_list" name="footer_bottom" as="footer_bottom" translate="label">
                     <label>Footer Bottom</label>
                     <block type="page/switch" name="store_switcher" as="store_switcher" after="*" template="page/switch/stores.phtml"/>
-                    <action method="insert"><block>footer.newsletter</block></action>
                     <block type="page/template_links" name="footer_links" as="footer_links" template="page/template/links.phtml">
                         <action method="setTitle"><title>Quick Links</title></action>
                     </block>
