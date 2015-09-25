@@ -1,0 +1,14 @@
+<?php if ($this->hasLinks()): ?>
+<div class="links footer-social-links">
+	<div class="block-title"><?php echo $this->getTitle(); ?></div>
+	<ul>
+		<?php foreach ($this->getLinks() as $code => $link): if (empty($link)) continue; ?>
+		<li>
+			<a title="<?php echo $this->__($code); ?>" title="" target="_blank" href="<?php echo $link ?>">
+				<i class="icon-<?php echo $code; ?>"></i>
+			</a>
+		</li>
+		<?php endforeach; ?>
+	</ul>
+</div>
+<?php endif; ?>

@@ -35,10 +35,7 @@
     },
     "bootstrap.js": {
       "files": [
-        "scripts/dropdown-fix.js"
-      ],
-      "bower" : [
-        "bootstrap-hover-dropdown"
+        "../vendor/bootstrap-hover-dropdown/bootstrap-hover-dropdown.js"
       ]
     },
     "main.js": {

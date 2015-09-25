@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Boilerplate_Social>
+            <active>true</active>
+            <codePool>local</codePool>
+            <depends>
+                <Boilerplate_Core/>
+
+            </depends>
+        </Boilerplate_Social>
+    </modules>
+</config>

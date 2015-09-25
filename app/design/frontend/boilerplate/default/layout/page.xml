@@ -202,12 +202,19 @@
                         <value>bottom-container</value>
                     </action>
                 </block>
-                <block type="page/switch" name="store_switcher" as="store_switcher" after="*" template="page/switch/stores.phtml"/>
-                <block type="page/template_links" name="footer_links" as="footer_links" template="page/template/links.phtml">
-                    <action method="setTitle"><title>Quick Links</title></action>
-            </block>
-                <block type="page/template_links" name="footer_links2" as="footer_links2" template="page/template/links.phtml">
-                    <action method="setTitle"><title>Account</title></action>
+                <block type="core/text_list" name="footer_top" as="footer_top" translate="label">
+                    <label>Footer Top</label>
+                </block>
+                <block type="core/text_list" name="footer_bottom" as="footer_bottom" translate="label">
+                    <label>Footer Bottom</label>
+                    <block type="page/switch" name="store_switcher" as="store_switcher" after="*" template="page/switch/stores.phtml"/>
+                    <action method="insert"><block>footer.newsletter</block></action>
+                    <block type="page/template_links" name="footer_links" as="footer_links" template="page/template/links.phtml">
+                        <action method="setTitle"><title>Quick Links</title></action>
+                    </block>
+                    <block type="page/template_links" name="footer_links2" as="footer_links2" template="page/template/links.phtml">
+                        <action method="setTitle"><title>Account</title></action>
+                    </block>
                 </block>
                 <!-- This static block can be created and populated in admin. The footer_links cms block can be used as a starting point. -->
                 <!--<block type="cms/block" name="footer_social_links">

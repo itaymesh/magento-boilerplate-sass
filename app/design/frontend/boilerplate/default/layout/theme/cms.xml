@@ -1,28 +1,10 @@
 <?xml version="1.0"?>
 <layout>
-    <default>
-        <reference name="footer">
-            <block type="core/template" name="footer_social_links"
-                   template="boilerplate/page/html/footer/social.phtml"/>
-            <block type="ipmenumanager/view" name="footer_menu">
-                <action method="setMenuCode">
-                    <code>footer_menu</code>
-                </action>
-            </block>
-        </reference>
-    </default>
     <cms_index_index>
         <reference name="root">
             <action method="setTemplate">
                 <template>page/1column.phtml</template>
             </action>
-        </reference>
-        <reference name="content">
-            <block name="home.slideshow" type="ibanners/view">
-                <action method="setGroupCode">
-                    <code>home</code>
-                </action>
-            </block>
         </reference>
     </cms_index_index>
 </layout>
