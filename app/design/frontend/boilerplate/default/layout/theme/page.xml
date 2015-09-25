@@ -13,6 +13,8 @@
         <reference name="header">
             <block type="core/text_list" name="masthead" as="masthead" translate="label">
                 <label>Header Masthead</label>
+                <block type="core/template" name="masthead_note" as="masthead_note"
+                       template="boilerplate/page/html/header/masthead/note.phtml"/>
             </block>
         </reference>
 

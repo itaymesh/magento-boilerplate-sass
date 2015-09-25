@@ -1,0 +1,12 @@
+<?php
+	$title = Mage::getStoreConfig('boilareplate_design/header/masthead_title');
+	$link = Mage::getStoreConfig('boilareplate_design/header/masthead_link');
+?>
+<?php if ($link && $title): ?>
+	<a  title="<?php echo $title; ?>" href="<?php echo Mage::helper('boilerplate_core/url')->getAbsoluteUrl($link) ?>"><?php echo $title; ?></a>
+<?php endif; ?>
+
+<?php /* ?>
+<li><a href="tel:<?php echo Mage::getStoreConfig('general/store_information/phone'); ?>"><?php echo Mage::getStoreConfig('general/store_information/phone'); ?></a></li>
+<li><a href="mailto:<?php echo Mage::getStoreConfig('contacts/email/recipient_email'); ?>"><?php echo Mage::getStoreConfig('contacts/email/recipient_email'); ?></a></li>
+<?php */ ?> 

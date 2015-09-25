@@ -8,9 +8,9 @@
                         <children>
                             <config>
                                 <children>
-                                    <boilareplate>
-                                        <title>Cala</title>
-                                    </boilareplate>
+                                    <boilareplate_design>
+                                        <title>Boilerplate Design</title>
+                                    </boilareplate_design>
                                 </children>
                             </config>
                         </children>
