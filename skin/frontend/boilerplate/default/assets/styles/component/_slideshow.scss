@@ -2,6 +2,13 @@
 /* ============================================ *
  * Slideshow
  * ============================================ */
+
+.slideshow-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+
 .slideshow-container {
   position: relative;
   display: block;
@@ -14,7 +21,6 @@
     padding: 0;
     position: relative;
     margin: 0;
-    border: 10px solid #FFFFFF;
     & > li {
       position: absolute;
       top: 0;
@@ -31,12 +37,13 @@
       }
 
       img {
-        max-width: 100%;
-        width: 100%;
+        @include img-responsive();
       }
     }
   }
 }
+
+/** ################### PAGER ################### **/
 
 .slideshow-pager {
   text-align: center;
@@ -85,6 +92,8 @@
   }
 }
 
+/** ################### NAVIGATION ################### **/
+
 .slideshow-prev,
 .slideshow-next {
   position: absolute;
@@ -98,15 +107,13 @@
   @include not-selectable();
 
   &:before {
-    content: '';
-    width: 0;
-    height: 0;
-    font-size: 0;
-    position: absolute;
-    border-style: solid;
-    display: block;
     top: 50%;
-    margin-top: -15px;
+    margin-top: -.5em;
+    line-height: 1;
+    z-index: 110;
+    position: absolute;
+    left:50%;
+    margin-left: -.5em;
   }
 
   &:hover {
@@ -119,30 +126,21 @@
   }
 }
 
-.slideshow-prev {
-  left: 8px;
 
-  &:before {
-    border-width: 15px 15px 15px 0;
-    border-color: transparent #FFFFFF transparent transparent;
-    top: 50%;
-    left: 10px;
-  }
+.slideshow-prev {
+
+  left: 0;
+
+  @include make-fontello-icon('\e805');
 
   &:hover:before {
-
   }
 }
 
 .slideshow-next {
-  right: 8px;
+  right: 0;
 
-  &:before {
-    border-width: 15px 0 15px 15px;
-    border-color: transparent transparent transparent #FFFFFF;
-    top: 50%;
-    right: 10px;
-  }
+  @include make-fontello-icon('\e807');
 
   &:hover:before {
 
@@ -168,57 +166,8 @@
   opacity: .5;
 }
 
-
-
-
-// nav positions (sides, bottom, top, left, right)
-.slidesshow-nav-pos-sides {
-
-  .slideshow-nav {
-    margin-top: -.5em;
-    top: 50%;
-    line-height: 1;
-    z-index: 1000;
-    position: absolute;
-  }
-
-  .slideshow-nav-next {
-    right: 0;
-  }
-  .slideshow-nav-prev {
-    left: 0;
-  }
-}
-
-.slideshow-wrapper {
-  position: relative;
-  width: 100%;
-}
-
-.slideshow {
-  .slide {
-    width: 100%;
-  }
-  img {
-    @include img-responsive;
-  }
-}
-
-.slideshow-nav {
-  cursor: pointer;
-  @include not-selectable;
-}
-
-.slideshow-nav-next {
-  @include make-fontello-icon('\e818');
-}
-
-.slideshow-nav-prev {
-  @include make-fontello-icon('\e80e');
-}
-
 .cycle-fx-carousel {
-  .slideshow-nav {
+  .slideshow- {
     margin-top: -.5em;
     line-height: 1;
     top: 50%;

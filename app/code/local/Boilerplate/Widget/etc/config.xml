@@ -26,4 +26,33 @@
             </boilerplate_widget>
         </helpers>
     </global>
+    <adminhtml>
+        <layout>
+            <updates>
+                <boilerplate_widget>
+                    <file>boilerplate/widget.xml</file>
+                </boilerplate_widget>
+            </updates>
+        </layout>
+        <!--<translate>
+            <modules>
+                <boilerplate_widget>
+                    <files>
+                        <default>Aijko_WidgetImageChooser.csv</default>
+                    </files>
+                </boilerplate_widget>
+            </modules>
+        </translate>-->
+    </adminhtml>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <boilerplate_widget before="Mage_Adminhtml">Boilerplate_Widget_Adminhtml</boilerplate_widget>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
 </config>

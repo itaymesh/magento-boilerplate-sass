@@ -8,7 +8,7 @@
                 <label>Image</label>
                 <required>1</required>
                 <visible>1</visible>
-                <type>widgetimagechooser/chooser</type>
+                <type>boilerplate_widget/adminhtml_chooser</type>
                 <sort_order>30</sort_order>
             </image>
             <title>
@@ -41,7 +41,7 @@
                 <label>Template</label>
                 <visible>1</visible>
                 <type>text</type>
-                <value>boilerplate/core/widget/banner.phtml</value>
+                <value>boilerplate/widget/banner.phtml</value>
             </template>
         </parameters>
     </prior_banner_block>
@@ -141,12 +141,12 @@
                 <visible>1</visible>
                 <required>1</required>
                 <label>Widget title</label>
-                <type>textarea</type>
+                <type>text</type>
             </title>
             <subtitle translate="label">
                 <visible>1</visible>
                 <label>Widget sub title</label>
-                <type>textarea</type>
+                <type>text</type>
             </subtitle>
             <css_class translate="label">
                 <visible>1</visible>
@@ -158,7 +158,7 @@
                 <visible>1</visible>
                 <label>Template</label>
                 <type>text</type>
-                <value>boilerplate/core/widget/catalog/product/carousel.phtml</value>
+                <value>boilerplate/widget/catalog/product/carousel.phtml</value>
             </template>
             <cache_lifetime translate="label description">
                 <label>Cache Lifetime (Seconds)</label>

@@ -29,12 +29,14 @@
     "jquery-cycle2.js": {
       "files": [
         "../bower_components/jquery-cycle2/build/jquery.cycle2.js",
-        "../bower_components/jquery-cycle2/build/plugin/jquery.cycle2.carousel.min.js",
-        "../bower_components/jquery-cycle2/build/plugin/jquery.cycle2.swipe.js"
+        "../bower_components/jquery-cycle2/build/plugin/jquery.cycle2.swipe.js",
+        "../vendor/jquery-cycle2/jquery.cycle2.carousel.js"
       ]
     },
     "bootstrap.js": {
       "files": [
+        "../bower_components/bootstrap-sass/assets/javascripts/bootstrap/transition.js",
+        "../bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js",
         "../vendor/bootstrap-hover-dropdown/bootstrap-hover-dropdown.js"
       ]
     },
@@ -54,7 +56,7 @@
     }
   },
   "config": {
-    "devUrl": "http://dev.dev-sass",
+    "devUrl": "http://dev.anerobi",
     "flip" : true
   }
 }

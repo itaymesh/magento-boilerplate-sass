@@ -1,12 +1,14 @@
 <div
 	class="widget-product-carousel<?php if ( $this->getCssClass() ): ?> <?php echo $this->getCssClass(); ?><?php endif; ?>">
 	<div class="widget-title"><?php echo $this->getTitle(); ?></div>
-	<?php if ( $_subtitle = $this->getSubtitle() ): ?>
-		<div class="widget-subtitle"><?php echo $this->getSubtitle(); ?></div>
+	<?php if ($_subtitle = $this->getSubtitle() ): ?>
+		<div class="widget-subtitle"><?php echo $_subtitle; ?></div>
 	<?php endif; ?>
 
-		<?php if (( $_products = $this->getProductCollection() ) && $_products->getSize()): ?>
-		<div class="widget-products slideshow" id="<?php echo $this->getId(); ?>" data-cycle-pager-template="<div class=page></div>">
+	<?php if (( $_products = $this->getProductCollection() ) && $_products->getSize()): ?>
+		<div class="widget-products slideshow" id="<?php echo $this->getId(); ?>"
+		     data-cycle-pager-template="<div class=page></div>"
+		     data-cycle-carousel-hops="<?php echo $this->getProductsPerPage(); ?>">
 			<?php $i = 0; ?>
 			<?php foreach ( $_products->getItems() as $_product ): ?>
 				<div class="item slide">
@@ -31,34 +33,34 @@
 			<?php endforeach; ?>
 		</div>
 
-	<script>
-		//<![CDATA[
-		(function ($) {
+		<script>
+			//<![CDATA[
+			(function ($) {
 
-			var cycleOptions = {
-				timeout: <?php echo $this->getTimeout() ?>,
-				speed: <?php echo $this->getSpeed() ?>,
-				slides: '.slide',
-				paused: <?php echo $this->getPaused() ? 1 : 0; ?>,
-				reverse: 0,
-				pauseOnHover: true,
-				showArrows: <?php echo $this->getShowNavs() ? 1 : 0; ?>,
-				showPager: <?php echo $this->getShowPager() ? 1 : 0; ?>,
-				fx: 'carousel',
-				carouselFluid: true,
-				allowWrap: 1,
-				carouselVisible: <?php echo $this->getProductsPerPage() ?>,
-				autoHeight: 1
-			};
+				var cycleOptions = {
+					timeout: <?php echo $this->getTimeout() ?>,
+					speed: <?php echo $this->getSpeed() ?>,
+					slides: '.slide',
+					paused: <?php echo $this->getPaused() ? 1 : 0; ?>,
+					reverse: 0,
+					pauseOnHover: true,
+					showArrows: <?php echo $this->getShowNavs() ? 1 : 0; ?>,
+					showPager: <?php echo $this->getShowPager() ? 1 : 0; ?>,
+					fx: 'carousel',
+					carouselFluid: true,
+					allowWrap: 1,
+					carouselVisible: <?php echo $this->getProductsPerPage() ?>,
+					autoHeight: 1
+				};
 
-			$('#<?php echo $this->getId(); ?>').cycleEvents().cycle(cycleOptions);
+				$('#<?php echo $this->getId(); ?>').cycleEvents().cycle(cycleOptions);
 
-		})(jQuery);
-		//]]>
-	</script>
-<?php else: ?>
-	<?php echo $this->__( "There are no products matching the selection." ); ?>
-<?php endif; ?>
+			})(jQuery);
+			//]]>
+		</script>
+	<?php else: ?>
+		<?php echo $this->__( "There are no products matching the selection." ); ?>
+	<?php endif; ?>
 
 </div>
 

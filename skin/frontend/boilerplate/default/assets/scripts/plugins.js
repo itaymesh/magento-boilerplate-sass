@@ -19,11 +19,11 @@
                 if (opts.showArrows && (slidesCount > 1 && opts.fx != 'carousel') || (opts.fx == 'carousel' && opts.carouselVisible < slidesCount)) {
 
                     // append slideshow nav controls
-                    wrapper.append('<div class="slideshow-nav slideshow-nav-prev"></div><div class="slideshow-nav slideshow-nav-next "></div>');
+                    wrapper.append('<div class="slideshow-nav slideshow-prev"></div><div class="slideshow-nav slideshow-next "></div>');
 
                     $.extend(opts, {
-                        prev: wrapper.children('.slideshow-nav-next'),
-                        next: wrapper.children('.slideshow-nav-prev'),
+                        prev: wrapper.children('.slideshow-next'),
+                        next: wrapper.children('.slideshow-prev'),
                         swipe: true
                     });
                 }
