@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<layout>
+    <aw_layerednavigation_handle>
+        <reference name="head">
+            <action method="removeItem">
+            <type>skin_css</type>
+            <name>aw_layerednavigation/css/style.css</name>
+        </action>
+        </reference>
+    </aw_layerednavigation_handle>
+</layout>

@@ -10,38 +10,61 @@
  * http://opensource.org/licenses/afl-3.0.php
  * If you did not receive a copy of the license and are unable to
  * obtain it through the world-wide-web, please send an email
- * to license@magentocommerce.com so we can send you a copy immediately.
+ * to license@magento.com so we can send you a copy immediately.
  *
  * DISCLAIMER
  *
  * Do not edit or add to this file if you wish to upgrade Magento to newer
  * versions in the future. If you wish to customize Magento for your
- * needs please refer to http://www.magentocommerce.com for more information.
+ * needs please refer to http://www.magento.com for more information.
  *
  * @category    design
- * @package     base_default
- * @copyright   Copyright (c) 2012 Magento Inc. (http://www.magentocommerce.com)
+ * @package     rwd_default
+ * @copyright   Copyright (c) 2006-2015 X.commerce, Inc. (http://www.magento.com)
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
 <?php $_product = $this->getProduct(); ?>
-<?php $buttonTitle = $this->__('Add to Cart'); ?>
+<?php $buttonTitle = Mage::helper('core')->quoteEscape($this->__('Add to Cart')); ?>
+<?php $stock = Mage::getModel('cataloginventory/stock_item')->loadByProduct($_product); ?>
+<?php $defaultQty =  max($this->getProductDefaultQty() * 1, 1); ?>
+<?php $inStockQty = $stock->getQty(); ?>
+<?php $maxSaleQty = (float)$stock->getMaxSaleQty(); ?>
+
 <?php if($_product->isSaleable()): ?>
     <div class="add-to-cart">
         <?php if(!$_product->isGrouped()): ?>
-            <div class="input-group">
-                <span class="input-group-addon">
-                    <label for="qty"><?php echo $this->__('Qty:') ?></label>
-                </span>
-                <input type="text" name="qty" id="qty" maxlength="12" value="<?php echo ($qty = $this->getProductDefaultQty() * 1) ? $qty : 1 ?>" title="<?php echo $this->__('Qty') ?>" class="input-text form-control qty" />
-                <span class="input-group-btn">
-                    <button type="button" title="<?php echo $buttonTitle ?>" class="button btn btn-cart" onclick="productAddToCartForm.submit(this)"><span><span><?php echo $buttonTitle ?></span></span></button>
-                <?php echo $this->getChildHtml('', true, true) ?>
-                </span>
+            <div class="qty-wrapper">
+                <label for="qty"><?php echo $this->__('Qty:') ?></label>
+                <?php if($stock->getEnableQtyIncrements()): ?>
+                    <?php $qtyIncrements = (int)$stock->getQtyIncrements(); ?>
+                    <?php $qty = $qtyIncrements; ?>
+                    <?php $maxQty = $maxSaleQty <= $inStockQty ? $maxSaleQty : $inStockQty == 0.0 ? $qtyIncrements * 5 : $inStockQty;?>
+                    <select class="qty" name="qty" id="qty">
+                        <?php while($qty <= $maxQty): ?>
+                            <option value="<?php echo $qty; ?>" <?php if ($qty == $defaultQty): ?><?php echo $defaultQty;  ?>selected="selected"<?php endif; ?>>
+                                <?php echo $qty; ?>
+                            </option>
+                            <?php $qty += $qtyIncrements; ?>
+                        <?php endwhile; ?>
+                    </select>
+                <?php else: ?>
+                    <?php $qty = $defaultQty; ?>
+                    <?php $maxQty = $maxSaleQty <= $inStockQty ? $maxSaleQty : (int)$inStockQty != 0.0 ? $inStockQty : 5; ?>
+                    <select class="qty" name="qty" id="qty">
+                        <?php while($qty <= $maxQty): ?>
+                            <option value="<?php echo $qty; ?>" <?php if ($qty == $defaultQty): ?><?php echo $defaultQty;  ?>selected="selected"<?php endif; ?>>
+                                <?php echo $qty; ?>
+                            </option>
+                            <?php $qty++; ?>
+                        <?php endwhile; ?>
+                    </select>
+                <?php endif; ?>
             </div>
-        <?php else: ?>
-            <button type="button" title="<?php echo $buttonTitle ?>" class="button btn-cart" onclick="productAddToCartForm.submit(this)"><span><span><?php echo $buttonTitle ?></span></span></button>
-                <?php echo $this->getChildHtml('', true, true) ?>
         <?php endif; ?>
+        <div class="add-to-cart-buttons">
+            <button type="button" title="<?php echo $buttonTitle ?>" class="button btn-cart" onclick="productAddToCartForm.submit(this)"><span><span><?php echo $buttonTitle ?></span></span></button>
+            <?php echo $this->getChildHtml('', true, true) ?>
+        </div>
     </div>
 <?php endif; ?>

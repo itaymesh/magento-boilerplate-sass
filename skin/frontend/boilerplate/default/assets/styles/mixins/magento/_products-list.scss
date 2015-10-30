@@ -14,7 +14,7 @@
 
   .products-grid--max-#{$max-column-count}-col#{$class-append} {
 
-    .item {
+    li, .item {
       @include make-xs-column($percent, 20px);
 
       &:nth-child(#{$column-count}n+1) {

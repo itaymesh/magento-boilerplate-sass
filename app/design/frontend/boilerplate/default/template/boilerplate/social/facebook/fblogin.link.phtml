@@ -1,0 +1,51 @@
+<?php
+/**
+ * Studio Raz.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the  Studio Raz EULA that is bundled with
+ * this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://studioraz.co.il/eula.html
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade the extension
+ * to newer versions in the future. If you wish to customize the extension
+ * for your needs please refer to http://studioraz.co.il/ for more information
+ * or send an email to support@studioraz.co.il
+ *
+ * @category    design
+ * @package     boilerplate_social
+ * @copyright   Copyright (c) 2011-2015 Studio Raz. (http://www.studioraz.co.il)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+
+<?php if(Mage::helper('boilerplate_social/facebook')->getAppConfig('fb_application_id')): ?>
+
+	<div id="fb-root"></div>
+	<script type="text/javascript">
+
+		window.fbAsyncInit = function() {
+			FB.init({
+				appId: '<?php echo Mage::helper('boilerplate_social/facebook')->getAppConfig('fb_application_id') ?>',
+				oauth: true,
+				status: true,
+				cookie: true,
+				xfbml: true,
+				channelUrl: "//"+window.location.hostname+"/fbopengraph/channel"
+			});
+
+		};
+		(function() {
+			var e = document.createElement('script'); e.async = true;
+			e.src = document.location.protocol + // fix for IE bug where is complains about mixed content in the like button iframe
+				'//connect.facebook.net/<?php echo Mage::helper('boilerplate_social/facebook')->getStoreLocale() ?>/all.js';
+			document.getElementById('fb-root').appendChild(e);
+		}());
+
+	</script>
+
+<?php endif; ?>

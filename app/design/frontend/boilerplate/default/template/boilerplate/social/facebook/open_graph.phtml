@@ -1,0 +1,36 @@
+<?php
+/**
+ * Studio Raz.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the  Studio Raz EULA that is bundled with
+ * this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://studioraz.co.il/eula.html
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade the extension
+ * to newer versions in the future. If you wish to customize the extension
+ * for your needs please refer to http://studioraz.co.il/ for more information
+ * or send an email to support@studioraz.co.il
+ *
+ * @category    design
+ * @package     boilerplate_social
+ * @copyright   Copyright (c) 2011-2015 Studio Raz. (http://www.studioraz.co.il)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php if($appId = Mage::helper('boilerplate_social/facebook')->getAppConfig('fb_application_id')): ?>
+	<meta property="fb:app_id" content="<?php echo $appId ?>"/>
+<?php endif; ?>
+
+<meta property="og:site_name" content="<?php echo $this->getSiteTitle() ?>"/>
+<meta property="og:title" content="<?php echo $this->getTitle() ?>"/>
+<meta property="og:type" content="<?php echo $this->getType() ?>"/>
+<meta property="og:image" content="<?php echo $this->getImage() ?>"/>
+<meta property="og:url" content="<?php echo $this->getPageUrl() ?>"/>
+<meta property="og:description" content="<?php echo $this->getDescription() ?>"/>
+
+

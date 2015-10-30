@@ -156,7 +156,7 @@ var jsTasks = function(filename) {
 var writeToManifest = function(directory) {
     return lazypipe()
         .pipe(gulp.dest, path.dist + directory)
-        .pipe(browserSync.stream)
+        .pipe(browserSync.stream, {match: '**/*.{js,css}'})
         .pipe(rev.manifest, revManifest, {
             base: path.dist,
             merge: true

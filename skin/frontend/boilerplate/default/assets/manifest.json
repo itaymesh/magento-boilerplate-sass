@@ -15,7 +15,8 @@
       "bower": [
         "imagesloaded",
         "magnific-popup",
-        "enquire"
+        "enquire",
+        "bootstrap-select"
       ]
     },
     "jquery-ui.js": {
@@ -37,14 +38,18 @@
       "files": [
         "../bower_components/bootstrap-sass/assets/javascripts/bootstrap/transition.js",
         "../bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js",
+        "../vendor/bootstrap/js/dropdown.js",
         "../vendor/bootstrap-hover-dropdown/bootstrap-hover-dropdown.js"
       ]
     },
     "main.js": {
       "files": [
+        "../vendor/cuForms/cuForms.js",
         "scripts/jquery.no-conflict.js",
         "scripts/menu-manager.js",
         "scripts/plugins.js",
+        "scripts/varien/accordion.js",
+        "scripts/varien/form.js",
         "scripts/script.js"
       ]
     },

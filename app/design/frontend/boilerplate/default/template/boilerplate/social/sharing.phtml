@@ -1,0 +1,84 @@
+<?php
+/**
+ * Studio Raz.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the  Studio Raz EULA that is bundled with
+ * this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://studioraz.co.il/eula.html
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade the extension
+ * to newer versions in the future. If you wish to customize the extension
+ * for your needs please refer to http://studioraz.co.il/ for more information
+ * or send an email to support@studioraz.co.il
+ *
+ * @category    design
+ * @package     boilerplate_default
+ * @copyright   Copyright (c) 2011-2015 Studio Raz. (http://www.studioraz.co.il)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php $_locale = Mage::app()->getLocale()->getLocaleCode(); ?>
+<ul class="social-buttons">
+
+	<!-- Facebook Like -->
+	<li>
+		<div class="fb-like"
+		     data-href="https://developers.facebook.com/docs/plugins/"
+		     data-layout="button_count"
+		     data-action="like"
+		     data-show-faces="false"
+		     data-share="false"></div>
+	</li>
+
+	<!-- Pin It -->
+	<li>
+		<a data-pin-do="buttonBookmark" null href="//www.pinterest.com/pin/create/button/"><img
+				src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_gray_20.png"/></a>
+	</li>
+
+	<!-- Google Plus -->
+	<li>
+		<div class="g-plusone" data-size="medium" data-width="50" data-annotation="none"></div>
+	</li>
+
+	<!-- Twitter Button -->
+	<li>
+		<a href="https://twitter.com/share" class="twitter-share-button"></a>
+	</li>
+
+</ul>
+
+<script async defer src="//assets.pinterest.com/js/pinit.js"></script>
+
+<script>(function (d, s, id) {
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) return;
+		js = d.createElement(s);
+		js.id = id;
+		js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4";
+		fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+
+<div id="fb-root"></div>
+<script>!function (d, s, id) {
+		var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+		if (!d.getElementById(id)) {
+			js = d.createElement(s);
+			js.id = id;
+			js.src = p + '://platform.twitter.com/widgets.js';
+			fjs.parentNode.insertBefore(js, fjs);
+		}
+	}(document, 'script', 'twitter-wjs');</script>
+
+<script>
+	window.___gcfg = {
+		lang: '<?php echo $_locale; ?>',
+		parsetags: 'onload'
+	};
+</script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>

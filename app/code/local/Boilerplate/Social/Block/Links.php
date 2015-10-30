@@ -22,7 +22,7 @@
 
 class Boilerplate_Social_Block_Links extends Mage_Core_Block_Template {
 
-	const XML_PATH_SOCIAL_LINKS = 'boilareplate/social_links';
+	const XML_PATH_SOCIAL_LINKS = 'boilareplate_social/social_links';
 
 	public function hasLinks() {
 		return $this->getStoreConfig() && count($this->getStoreConfig()) > 1;

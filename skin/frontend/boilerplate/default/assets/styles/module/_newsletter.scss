@@ -1,0 +1,27 @@
+.block-subscribe {
+  label {
+    color: $white;
+  }
+  .input-group-addon {
+    padding-top: 2px;
+    padding-bottom: 2px;
+  }
+
+  .validation-advice {
+    display: none;
+  }
+
+  .input-text {
+    background-color: transparent;
+    border-width: 0 0 1px;
+    padding: 1px 5px;
+    height: 24px;
+
+  }
+  .input-group-btn {
+    padding-left: 6px;
+    button {
+      padding: 1px 8px;
+    }
+  }
+}

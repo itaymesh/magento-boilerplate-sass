@@ -27,6 +27,10 @@
             <boilareplate_default_newsletter>
                 <file>theme/newsletter.xml</file>
             </boilareplate_default_newsletter>
+            <!-- vendor -->
+            <aw_layerednavigation>
+                <file>theme/aw_layerednavigation.xml</file>
+            </aw_layerednavigation>
         </updates>
     </layout>
 </theme>

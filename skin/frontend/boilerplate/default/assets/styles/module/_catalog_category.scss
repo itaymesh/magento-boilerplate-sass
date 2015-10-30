@@ -8,7 +8,14 @@
 
 .category-title {
   div[role="main"] & {
-    @extend .sr-only;
+
   }
 }
 
+.category-image img {
+  @include img-responsive();
+}
+
+.category-description {
+
+}

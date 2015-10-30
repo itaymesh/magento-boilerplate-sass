@@ -1,3 +1,14 @@
+/* ======================================================== *
+ * PRODUCT LIST (Category + Search Results)
+ * ======================================================== */
+
+/* ============================ *
+ * PRODUCT LIST COMMON
+ * ============================ */
+
+.category-products {
+}
+
 /* ============================ *
  * PRODUCT GRID
  * ============================ */
@@ -16,6 +27,7 @@
 /* ============================ *
  * 3 columns max
  * ============================ */
+
 @media (min-width: 360px) {
   @include make-product-grid(3, 2);
 }
@@ -53,6 +65,23 @@
 }
 
 
+/* ============================ *
+ * 6 columns max
+ * ============================ */
+
+@media (min-width: 360px) {
+  @include make-product-grid(6, 2);
+}
+
+@media(min-width: $screen-tablet) {
+  @include make-product-grid(6, 3);
+}
+
+@media(min-width: $screen-desktop) {
+  @include make-product-grid(6, 6);
+}
+
+
 // product item
 
 .item {
@@ -66,46 +95,136 @@
   }
 }
 
-
 // Products grid
 .products-grid {
 
   .item {
+    background-color: $white;
     margin-bottom: 20px;
-  }
-
-  .product-image {
-    display: block;
     position: relative;
-    img {
+
+    .product-image {
+      display: block;
+      position: relative;
+      img {
+      }
+
+      .hover-image {
+        position: absolute;
+        right: 0;
+        top: 0;
+        display: none;
+        height: auto;
+      }
     }
 
-    .hover-image {
+    .product-info {
+      padding-top: .5em;
+      text-align: center;
+    }
+
+    .price-box {
+      margin-top: 5px;
+    }
+
+    .add-to-links {
+
+      .separator {
+        display: none;
+      }
+    }
+    .link-wishlist, .product-badge {
       position: absolute;
-      right: 0;
-      top: 0;
-      display: none;
-      height: auto;
+      z-index: 1;
+      top: 4px;
+      @include not-selectable;
     }
-  }
-  
-  .product-info {
-    padding-top: .5em;
-  }
+    .product-badge {
+      right: 30px;
+      text-transform: uppercase;
+      color: $white;
+      font-weight: bold;
+      &.sale {
+        border-radius: 12px;
+        padding: 2px 8px;
+        background-color: $sale-color;
+      }
+      &.new {
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+        padding: 2px 8px;
+        background-color: $new-color;
+        @include arrow-lazy(left, 12px, $new-color);
+        position: absolute;
+      }
+    }
 
-  .price-box {
-    margin-top: 5px;
-  }
+    .link-wishlist {
+      left: 30px;
+      @include make-font-icon($icon-var-heart-empty);
+      &:before {
+        @include link-color($gray, $pink);
+        font-size: 22px;
+      }
 
-  .actions {
-    position: absolute;
-    bottom: 0;
-  }
+    }
+    // hover box effect for prodct item
 
-  .add-to-links {
+    @media (min-width: $grid-float-breakpoint) {
 
-    .separator {
-      display: none;
+      margin-top: 30px;
+
+      .product-image {
+        // TODO-SR: set product item image with for wide screens
+        width: 90%;
+        margin: 0 auto;
+      }
+      &:hover {
+        z-index: 2;
+        .item-inner {
+          margin: -20px -10px;
+          padding: 19px 9px;
+          border: 1px solid #bbb;
+          box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.3);
+          position: relative;
+          z-index: 2;
+          background: #fff;
+        }
+        .product-item-inner {
+          display: block;
+        }
+        .product-badge, .link-wishlist {
+          top: 23px;
+        }
+        .product-badge {
+          right: 29px;
+        }
+
+        .link-wishlist {
+          left: 29px;
+          &:before {
+            color: $pink;
+          }
+        }
+      }
+
+      .product-item-inner {
+        display: none;
+        position: absolute;
+        left: 0;
+        right: -1px;
+        z-index: 2;
+        background: #fff;
+        padding: 0 9px 9px 9px;
+        margin: 9px 0 0 -1px;
+        border: 1px solid #bbb;
+        border-top: none;
+        box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.3);
+      }
+      .product-item-actions {
+        margin: -10px 0 10px;
+        background-color: $white;
+      }
     }
   }
 }
@@ -113,6 +232,7 @@
 /* ============================ *
  * PRODUCT LIST
  * ============================ */
+
 .products-list {
   li.item {
     @include clearfix();
@@ -153,7 +273,6 @@
   }
 }
 
-
 /* ============================================ *
  * Mini Product List
  * ============================================ */
@@ -170,15 +289,11 @@
 
   // Vertically center product name
   .product-details .product-name {
-    padding-top: 10px;
+    padding: 0;
   }
 
   li {
-    clear: both;
-
-    &:after {
-      @include clearfix();
-    }
+    @include clearfix();
   }
 }
 
@@ -210,21 +325,25 @@
   }
 }
 
-
 /* ============================================ *
  * Layered Navigation
  * ============================================ */
+.block-layered-nav {
+  .block-title {
+    display: none;
+  }
+}
 
 .block-layered-nav .block-subtitle--filter {
   // Will be shown at smaller viewports
   display: none;
-  //@include accordionDtBase;
+  @include accordionDtBase;
   cursor: pointer;
 }
 
 .block-layered-nav .block-content {
   // Accordions are fully expanded until a smaller resolution.
-  //@include accordion;
+  @include accordion;
 }
 
 .block-layered-nav dl dd {
@@ -240,14 +359,22 @@
   }
 }
 
-@media (max-width:  $screen-xs) {
-  .block-layered-nav .block-content > dl > dt {
-    padding-left: 10px;
-
-    &:after {
-      display: none;
+@media (min-width: $screen-tablet) {
+  .block-layered-nav {
+    .block-content {
+      > dl {
+        > dt {
+          &:not(:first-child) {
+            margin-top: $line-height-computed;
+          }
+          &:after {
+            display: none;
+          }
+        }
+      }
     }
   }
+
 }
 
 @media (max-width: $screen-xs-max) {
@@ -264,19 +391,17 @@
   .block-layered-nav .block-content {
     padding-top: 0;
     margin-top: 15px;
-    //@include accordionCollapse;
+    @include accordionCollapse;
   }
-
 
   .block-layered-nav .block-subtitle--filter {
     //background-color: $c-action;
     border: 0;
     margin-bottom: 0;
     display: block;
-    color: #FFFFFF;
 
     &:after {
-      //@include triangle(right, 4px, #FFFFFF);
+      @include triangle(right, 4px, #FFFFFF);
       right: 10px;
       top: 50%;
       margin-top: -5px;
@@ -284,11 +409,10 @@
 
     &:hover {
       //background-color: $c-button-hover;
-      color: #FFFFFF;
     }
 
     &.active:after {
-      //@include triangle(down, 4px, #FFFFFF);
+      @include triangle(down, 4px, #FFFFFF);
       right: 10px;
       top: 50%;
       margin-top: -3px;
@@ -336,7 +460,7 @@
     }
 
     &:after {
-      @include clearfix;
+      //@include clearfix;
     }
   }
 }

@@ -48,4 +48,15 @@
             </boilerplate_mage_setup>
         </resources>
     </global>
+    <frontend>
+        <routers>
+            <newsletter>
+                <args>
+                    <modules>
+                        <boilerplate_mage before="Mage_Newsletter">Boilerplate_Mage_Newsletter</boilerplate_mage>
+                    </modules>
+                </args>
+            </newsletter>
+        </routers>
+    </frontend>
 </config>

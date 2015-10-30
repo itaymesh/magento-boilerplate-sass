@@ -1,8 +1,14 @@
 @import "../../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/input-groups";
 
-.input-group-addon label {
-    margin-bottom: 0;
-    font-weight: normal;
+.input-group-btn {
+    vertical-align: top;
+}
+.input-group-addon {
+    border:0 none;
+    label {
+        margin-bottom: 0;
+        font-weight: normal;
+    }
 }
 
 

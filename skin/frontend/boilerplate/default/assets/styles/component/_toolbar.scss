@@ -1,51 +1,33 @@
+/* ============================================ *
+ *  TOOLBAR
+ * ============================================ */
+
 $toolbar-height: auto;
 
-/* -------------------------------------------- *
- * Toolbar
- */
-
 .toolbar {
-  /*margin-top: $box-spacing;
-  margin-bottom: 15px;
-  border-bottom: 1px solid $c-module-border;
-  border-top: 1px solid $c-module-border;
-  background: $c-module-background;
-  padding: 5px 10px 0px 10px;*/
-
-  &:after {
-    /*@include clearfix;*/
-  }
+  @include clearfix();
 }
 
 .pager-no-toolbar {
-  /*margin-bottom: $box-spacing;*/
+
 }
 
 // This will apply to the bottom toolbar
 .pager-no-toolbar ~ .pager-no-toolbar {
-  /*margin-top: $box-spacing;*/
-}
 
-.toolbar,
-.pager {
-  /*font-family: $f-stack-special;
-  color: $c-text;
-  line-height: 30px;
-  font-size: $f-size-xs;*/
 }
 
 .toolbar label,
 .pager-no-toolbar label {
-  /*font-weight: normal;
-  text-transform: uppercase;*/
+
 }
 
-/*$toolbar-icon-padding-offset: 8px;*/
+// ----------------------------------------------
+// ## Sorter
 
 .sorter {
   float: left;
-  /*margin-bottom: 5px;*/
-
+  padding: $padding-base-vertical 0;
   label {
     float: left;
     margin-right: 5px;
@@ -56,6 +38,7 @@ $toolbar-height: auto;
   }
 }
 
+
 .sorter > .sort-by {
   float: left;
   margin-right: 5px;
@@ -64,58 +47,78 @@ $toolbar-height: auto;
     float: left;
 
   }
+  label {
+    @include hide-text();
+    margin-right: 0;
+  }
   .sort-by-switcher {
-    height: $toolbar-height;
+    @include hide-text();
     display: inline-block;
-    /*@extend .icon-sprite;*/
-  }
-  .sort-by-switcher--asc {
-    /*background-position: 0+4px (-550px+$toolbar-icon-padding-offset);*/
-    &:hover {
-      /*background-position: -50px+4px (-550px+$toolbar-icon-padding-offset);*/
+
+    &:before {
+      font-size: $font-size-base;
+      @extend .font-icon;
     }
-  }
-  .sort-by-switcher--desc {
-    /*background-position: 0+4px (-575px+$toolbar-icon-padding-offset);*/
-    &:hover {
-      /*background-position: -50px+4px (-575px+$toolbar-icon-padding-offset);*/
+    &--asc {
+      &:before {
+        content: $icon-var-arrow-up;
+      }
+      &:hover {
+
+      }
+    }
+    &--desc {
+      &:before {
+        content: $icon-var-arrow-down;
+      }
+      &:hover {
+
+      }
     }
   }
 }
 
 .sorter > .view-mode {
+  margin-bottom: 0;
   float: right;
 
+  label {
+    @include hide-text();
+  }
   .grid,
   .list {
     float: left;
     width: 30px;
     height: $toolbar-height;
-    /*@extend .icon-sprite;*/
+
   }
   .grid {
     margin-right: 5px;
-    /*background-position: $toolbar-icon-padding-offset (-500px+$toolbar-icon-padding-offset);*/
+
   }
   strong.grid,
   a.grid:hover {
-    /*background-position: -50px+$toolbar-icon-padding-offset (-500px+$toolbar-icon-padding-offset);*/
+
   }
   .list {
-    // We want the icon to line up with the container width, so we are adding 3px
-    /*background-position: $toolbar-icon-padding-offset+3px (-525px+$toolbar-icon-padding-offset);*/
+
   }
   strong.list,
   a.list:hover {
-    /*background-position: -50px+$toolbar-icon-padding-offset+3px (-525px+$toolbar-icon-padding-offset);*/
+
   }
 }
 
+
+
+// ----------------------------------------------
+// ## Pager
+
 .pager {
   float: right;
-  overflow: hidden;
 
   & > .count-container {
+    padding: $padding-base-vertical $padding-base-horizontal;
     float: left;
   }
 
@@ -132,11 +135,8 @@ $toolbar-height: auto;
     line-height: $toolbar-height;
 
     & > label {
-      padding-right: 5px;
+      @include hide-text();
 
-      &:after {
-        content: ':';
-      }
     }
   }
 
@@ -145,85 +145,38 @@ $toolbar-height: auto;
   .pages {
 
   }
+}
+
+.toolbar {
+
+  .pages {
+    float: right;
+    > ol {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
 
 }
 
-.pages {
-  float: right;
-  overflow: hidden;
-  margin-left: 15px;
 
-  strong {
-    display: none;
+
+
+// ----------------------------------------------
+// ## Toolbar Top
+
+
+
+// ----------------------------------------------
+// ## Toolbar Bottom
+
+.toolbar-bottom {
+
+  .pages {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
 }
 
-.pages li {
-  float: left;
-}
 
-.pages a,
-.pages span {
-  display: inline-block;
-  border: 0;
-  /*font-size: $f-size-s;*/
-  text-align: center;
-  text-transform: uppercase;
-  vertical-align: middle;
-  white-space: nowrap;
-  //line-height: $toolbar-height;
-  width: 25px;
-  height: $toolbar-height;
-  padding: 0;
-  /*color: $c-action;
-  font-family: $f-stack-sans;*/
-}
-
-.pages .current,
-.pages .current:hover {
-  /*color: $c-text;
-  border: 1px solid $c-module-border;*/
-  width: $toolbar-height;
-  background-color: #FFFFFF;
-  cursor: default;
-}
-
-.pages .next,
-.pages .previous {
-  // New HP5BP technique: https://github.com/h5bp/html5-boilerplate/commit/aa0396eae757c9e03dda4e463fb0d4db5a5f82d7
-  font: 0/0 a;
-  text-shadow: none;
-  color: transparent;
-  background-color: transparent;
-  position: relative;
-
-  &:hover {
-    /*border: 1px solid $c-action;*/
-  }
-}
-
-.pages .next {
-  &:before {
-    /*@include triangle(right, 4px, $c-action);*/
-    top: 50%;
-    margin-top: -3px;
-    left: 50%;
-    margin-left: -2px;
-  }
-  &:hover:before {
-    /*@include triangle(right, 4px, $c-stimulus);*/
-  }
-}
-
-.pages .previous {
-  &:before {
-    /*@include triangle(left, 4px, $c-action);*/
-    top: 50%;
-    margin-top: -3px;
-    left: 50%;
-    margin-left: -2px;
-  }
-  &:hover:before {
-    /*@include triangle(left, 4px, $c-stimulus);*/
-  }
-}

@@ -55,6 +55,18 @@
                 </attributes>
             </collection>
         </product>
+        <events>
+            <catalog_block_product_status_display>
+                <observers>
+                    <boilerplate_catalog>
+                        <class>boilerplate_catalog/observer</class>
+                        <type>singleton</type>
+                        <method>catalogBlockProductStatusDisplay</method>
+                    </boilerplate_catalog>
+                </observers>
+            </catalog_block_product_status_display>
+        </events>
+
     </frontend>
 
 </config>

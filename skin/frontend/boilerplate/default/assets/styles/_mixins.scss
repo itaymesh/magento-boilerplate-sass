@@ -34,7 +34,7 @@
 @import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/gradients";
 
 // Layout
-@import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/clearfix";
+@import "mixins/clearfix";
 @import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/center-block";
 @import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/nav-vertical-align";
 @import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/grid-framework";
@@ -46,7 +46,6 @@
 @import "mixins/links";
 @import "mixins/images";
 @import "mixins/arrow";
-@import "mixins/fonts";
 @import "mixins/not-selectable";
 
 /* ============================================ *

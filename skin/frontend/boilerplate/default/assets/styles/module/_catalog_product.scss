@@ -10,7 +10,6 @@
   @extend .container-fluid;
 }
 
-
 // Essential (media + shop)
 
 .product-essential {
@@ -24,71 +23,234 @@
 }
 
 /* -------------------------------------------- *
- * -- Product View Name
+ * -- Product View - Actions
  */
 
 .product-view {
 
-  .product-name {
-    h1 {
-      margin-top: 0;
+  .add-to-box:after,
+  .add-to-cart:after {
+    @include clearfix;
+  }
+
+  .add-to-cart {
+    padding-bottom: 3px;
+    margin-bottom: 10px;
+    &:after {
+      @include clearfix-after;
     }
+    //@include clearfix();
+  }
+
+  .add-to-cart .qty-wrapper,
+  .add-to-cart .qty-wrapper label {
+    margin-right: 7px;
+    float: left;
+  }
+
+  .add-to-cart .qty-wrapper label {
+    line-height: 34px;
+  }
+
+  .add-to-cart .qty-wrapper select,
+  .add-to-cart .qty-wrapper input {
+    .qty {
+      float: left;
+      height: 34px;
+      width: 3.8em;
+      display: inline-block;
+      padding-left: $padding-base-horizontal/2;
+      padding-right: $padding-base-horizontal/2;
+    }
+  }
+
+  .add-to-cart-buttons {
+    float: left;
+    margin-right: 10px;
+    max-width: 100%; // Constrain width in Firefox
+
+    .paypal-logo {
+      clear: left;
+      text-align: center;
+
+      .paypal-button {
+        margin: 0 auto;
+        display: block;
+        width: 170px;
+      }
+
+      .bml_button {
+        display: block;
+        width: 174px;
+        margin: 0 auto;
+
+        a {
+          text-align: center;
+        }
+      }
+
+      .paypal-or {
+        display: block;
+        margin-bottom: 10px;
+        margin-left: 0;
+        margin-right: 0;
+        line-height: 1;
+        text-align: center;
+      }
+    }
+  }
+
+  .add-to-cart-buttons .button {
+    float: left;
+  }
+
+  .alert-price,
+  .alert-stock {
+    clear: both;
+  }
+
+  /* This is the "or" that separates the "Add to Cart" and "Add to X" links */
+  .add-to-box .or {
+    display: none;
+  }
+
+}
+
+/* -------------------------------------------- *
+ * -- Product View - Product Essential
+ */
+
+
+.product-view {
+  .product-essential {
+
+    .extra-info {
+      .ratings {
+        .rating-box,
+        .amount {
+          float: left;
+        }
+
+        .rating-box {
+          margin-top: 8px;
+          margin-right: 10px;
+        }
+
+        &:after {
+          @include clearfix;
+        }
+      }
+    }
+
+    &:after {
+      @include clearfix;
+    }
+  }
+
+  .product-shop .product-name .h1,
+  .product-img-box .product-name h1 {
+    margin-bottom: 10px;
+    border: 0;
   }
 
   .product-shop {
+
+    text-align: center;
+
     .product-name {
       display: none;
     }
-  }
+    .product-name .h1 {
+      margin-bottom: 5px;
+    }
 
-  @media (min-width: $screen-tablet) {
-    .product-img-box {
-      .product-name {
-        display: none;
-      }
+    .extra-info {
+      float: left;
+      padding-right: 30px/2;
+      clear: left;
+      width: 70%;
     }
-    .product-shop {
-      .product-name {
-        display: block;
-      }
+
+    .price-info {
     }
+
+    .extra-info,
+    .price-info {
+      margin-bottom: 10px;
+    }
+
+    .short-description {
+      margin-bottom: 10px;
+      clear: both;
+    }
+
+    .ratings {
+      margin-bottom: 8px;
+    }
+
+  }
+}
+
+
+.price-box.map-info a {
+  display: inherit;
+}
+
+
+
+/* -------------------------------------------- *
+ * -- Product Name
+ */
+@media (min-width: $grid-float-breakpoint) {
+
+  .product-view .product-shop .product-name {
+    display: block;
+  }
+  .product-img-box .product-name {
+    display: none;
   }
 }
 
 /* -------------------------------------------- *
- * -- Product Shop (name, price etc)
+ * -- Additional Links
  */
 
-.product-view .product-shop {
-  .product-name {
+.product-view .add-to-links {
 
-    h1 {
-
-    }
+  &:after {
+    @include clearfix-after;
   }
 
-  .availability,
-  .price-box,
-  .add-to-box,
-  .short-description {
-    margin-bottom: ($line-height-computed / 2);
+  li {
+    display: inline-block;
   }
 
-  .product-options-bottom {
-    .price-box,
-    .add-to-cart {
-      padding-left: 0;
-      padding-right: 0;
-    }
+  a {
+    padding: 2px 7px 2px 0px;
+    margin-left: 7px;
   }
 
-  @media (min-width: $screen-md) {
-    .product-options-bottom {
-      .price-box,
-      .add-to-cart {
-        float: none;
-        width: auto;
-      }
+  li:first-child a {
+    margin-left: 0px;
+  }
+
+  li:last-child a {
+    border-right: 0px;
+  }
+}
+
+/* -------------------------------------------- *
+ * -- Social Links
+ */
+
+.social-buttons {
+  margin-top: $line-height-computed;
+
+  @include clearfix();
+  li {
+    float: left;
+    &:not(:first-child) {
+      margin-left: 5px;
     }
   }
 }
@@ -96,39 +258,18 @@
 /* -------------------------------------------- *
  * -- Product Media
  */
-.product-view .product-img-box {
 
-  img {
-    @include img-responsive();
-  }
+.product-img-box {
 
-  .more-views ul {
-    @include make-row();
+  .product-image img {
+    max-width: 100%;
 
-    li {
-      @include make-xs-column(3);
-    }
-  }
+    // Since product detail page images are not cropped to a specific aspect ratio, in order to make the image not
+    // cut off on tall skinny screens, we are setting a max-height on the image
+    max-height: 750px;
 
-  @media (min-width: $screen-tablet) {
-    padding-left: 0;
-    padding-right: ($grid-gutter-width / 2);
-  }
-
-  .product-image-zoom,
-  .more-views {
-    img {
-      @include img-responsive();
-    }
-  }
-
-  .product-image-zoom {
-    margin-bottom: ($line-height-computed / 2);
-  }
-
-  .more-views {
-    padding-top: ($line-height-computed / 2);
-    border-top: 1px solid $hr-border;
+    // Centering the image for instances where max-height kicks in
+    margin: 0px auto;
   }
 
 }
@@ -147,8 +288,33 @@
       }
     }
   }
+}
 
-  //@include loadingOverlay();
+.more-views {
+  margin-top: 20px;
+  h2 {
+    margin: 0;
+    @include hide-text();
+  }
+}
+
+.product-image-thumbs {
+  li {
+    display: inline-block;
+  }
+  li:first-child {
+    margin-left: -1px;
+  }
+  a {
+    display: inline-block;
+    border: 1px solid transparent;
+  }
+}
+
+.no-touch .product-image-thumbs {
+  a:hover {
+    border-color: darken(#EDEDED, 15%);
+  }
 }
 
 /* -------------------------------------------- *
@@ -169,87 +335,6 @@
       h2 {
         display: none;
       }
-    }
-  }
-
-}
-
-/* -------------------------------------------- *
- * Catalog - Product Availability
- */
-.availability {
-  margin: 0;
-
-  span {
-    font-weight: bold;
-  }
-
-  &.in-stock span {
-    color: $alert-success-text;
-  }
-
-  &.out-of-stock span {
-    color: $alert-danger-text;
-  }
-}
-
-.availability-only {
-  span,
-  a {
-    font-weight: bold;
-  }
-}
-
-.availability-only-details {
-  @extend .table;
-}
-
-// Add to cart
-.add-to-cart {
-
-  .paypal-logo {
-    margin: 0;
-    text-align: right;
-
-    .paypal-or {
-      display: block;
-      margin: 5px 60px 5px 0;
-    }
-
-    .paypal-logo {
-      margin: 0;
-    }
-  }
-}
-
-/* -------------------------------------------- *
- * Catalog - Product Add to box
- */
-
-.add-to-box {
-  @include clearfix();
-  text-align: center;
-  padding-left: ($grid-gutter-width / 2);
-  padding-right: ($grid-gutter-width / 2);
-
-  .add-to-cart {
-    margin: 0 (-$grid-gutter-width / 2) ($line-height-computed / 2);
-  }
-
-  .or {
-    float: left;
-  }
-
-  .add-to-links {
-    float: right;
-
-    li,
-    .separator {
-      float: left;
-    }
-
-    .separator {
-      margin: 0 4px;
     }
   }
 }
@@ -352,33 +437,6 @@
   @extend .well;
   @extend .well-sm;
 
-  .price-box,
-  .add-to-cart {
-
-  }
-
-  .add-to-links {
-    padding-top: ($line-height-computed / 2);
-    clear: both;
-    text-align: center;
-
-    li {
-      display: inline;
-    }
-  }
-  .price-box {
-    @include clearfix();
-    padding-top: ($line-height-computed / 2);
-  }
-  .price-label {
-    float: left;
-    padding-right: 5px;
-  }
-  .price-tax {
-    float: left;
-  }
-
-
   /* "display: none" should be removed if products on site have a long list of product options and those product options */
   /*  affect the price so that the customer can see the updated price close to the "Add to Cart" button */
   .price-box {
@@ -435,21 +493,6 @@
   }
 }
 
-.product-view .box-collateral {
-  @include clearfix();
-  @extend .panel;
-  padding: 15px;
-  border-color: $panel-default-border;
-
-  > h2 {
-    @extend .panel-heading;
-    margin: -15px -15px 15px;
-    border-color: $panel-default-border;
-    background-color: $panel-default-heading-bg;
-    font-size: ceil(($font-size-base * 1.125));
-    color: $panel-default-text;
-  }
-}
 
 /* -------------------------------------------- *
  * -- Product Attributes

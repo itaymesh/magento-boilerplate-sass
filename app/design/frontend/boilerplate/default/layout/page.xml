@@ -81,6 +81,11 @@
                     <script>boilerplate/libs.js</script>
                 </action>-->
 
+                <!-- Add vendor dependencies (for RWD THEME -->
+                <action method="addItem"><type>skin_js</type><name>js/lib/modernizr.custom.min.js</name></action>
+                <action method="addItem"><type>skin_js</type><name>js/lib/matchMedia.js</name></action>
+                <action method="addItem"><type>skin_js</type><name>js/lib/matchMedia.addListener.js</name></action>
+
                 <!-- Theme JS Scripts -->
                 <action method="addItem">
                     <type>skin_js</type>
@@ -144,7 +149,7 @@
 
             </block>
 
-            <block type="core/text_list" name="after_body_start" as="after_body_start" translate="label">
+            <block type="core/text_list" name="page_top" as="page_top" translate="label">
                 <label>Page Top</label>
             </block>
 
@@ -153,12 +158,14 @@
 
             <block type="page/html_header" name="header" as="header">
                 <!-- moved to theme/customer.xml under customer_head block -->
-               <!-- <block type="page/template_links" name="top.links" as="topLinks"/>-->
+                <!-- <block type="page/template_links" name="top.links" as="topLinks"/>-->
                 <block type="page/switch" name="store_language" as="store_language"
                        template="page/switch/languages.phtml"/>
                 <block type="core/text_list" name="top.menu" as="topMenu" translate="label">
                     <label>Navigation Bar</label>
-                    <block type="page/html_topmenu" name="catalog.topnav" template="page/html/topmenu.phtml"/>
+                    <block type="page/html_topmenu" name="catalog.topnav" template="page/html/topmenu.phtml">
+                        <block type="page/html_topmenu_renderer" name="catalog.topnav.renderer" template="page/html/topmenu/renderer.phtml"/>
+                    </block>
                 </block>
                 <block type="page/html_wrapper" name="top.container" as="topContainer" translate="label">
                     <label>Page Header</label>
@@ -167,9 +174,14 @@
                     </action>
                 </block>
                 <block type="page/html_welcome" name="welcome" as="welcome"/>
-                <block type="page/html_breadcrumbs" name="breadcrumbs" as="breadcrumbs"/>
             </block>
 
+
+            <block type="page/html_breadcrumbs" name="breadcrumbs" as="breadcrumbs"/>
+
+            <block type="core/text_list" name="right" as="right" translate="label">
+                <label>Page Top</label>
+            </block>
 
             <block type="core/text_list" name="left_first" as="left_first" translate="label">
                 <label>Left Column First (shows above main column on smaller screens)</label>

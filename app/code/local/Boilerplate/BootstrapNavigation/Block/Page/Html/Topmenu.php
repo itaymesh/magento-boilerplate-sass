@@ -7,6 +7,7 @@ class Boilerplate_BootstrapNavigation_Block_Page_Html_Topmenu extends Mage_Page_
      */
     public function getHtml($outermostClass = '', $childrenWrapClass = '')
     {
+
         $html = parent::getHtml($outermostClass, $childrenWrapClass);
 
         if (Mage::getStoreConfig('catalog/navigation/top_in_dropdown')) {
@@ -52,7 +53,7 @@ class Boilerplate_BootstrapNavigation_Block_Page_Html_Topmenu extends Mage_Page_
      */
     protected function _addToggle($html)
     {
-        return preg_replace('/(<li\s+class="level0.*?parent.*?<a.*?)(>)/', '$1 data-hover="dropdown" data-toggle="dropdown"$2', $html);
+        return preg_replace('/(<li\s+class="level0.*?parent.*?<a.*?)(>)/', '$1 data-hover="dropdown" $2', $html);
     }
 
     /**
