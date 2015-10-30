@@ -1,7 +1,7 @@
 @import "module/catalogsearch";
-@import "module/checkout";
 @import "module/checkout_cart";
 @import "module/checkout_cart_minicart";
+@import "module/_checkout-onepage";
 @import "module/customer";
 @import "module/languages";
 @import "module/catalog_common";
@@ -9,9 +9,8 @@
 @import "module/catalog_prices";
 @import "module/catalog_product";
 @import "module/product_list";
+@import "module/layered_navigation";
 @import "module/ratings";
 @import "module/newsletter";
 @import "module/widget";
 @import "module/boilerplate_social";
-
-
