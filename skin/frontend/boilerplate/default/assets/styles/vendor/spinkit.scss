@@ -1,0 +1,17 @@
+$spinkit-spinner-margin : 0;
+@import "../../../bower_components/SpinKit/scss/spinners/8-circle";
+.spin-kit {
+  position: absolute;
+  top:0;
+  bottom:0;
+  left: 0;
+  right:0;
+  z-index: 100;
+  background-color: rgba($white, 0.5);
+  > div {
+    position: absolute;
+    top: 50%;
+    /* @noflip */
+    left: 50%;
+  }
+}

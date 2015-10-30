@@ -22,7 +22,8 @@
         "jquery-cycle2": "~2",
         "jquery-ui": "~1",
         "magnific-popup": "~1",
-        "spinjs": "~2"
+        "spinjs": "~2",
+        "ScrollToFixed": "~1.0.6"
     },
     "overrides": {
         "imagesloaded": {
@@ -30,5 +31,8 @@
                 "./imagesloaded.pkgd.min.js"
             ]
         }
+    },
+    "devDependencies": {
+        "SpinKit": "spinkit#~1.2.2"
     }
 }

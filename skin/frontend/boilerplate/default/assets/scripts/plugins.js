@@ -102,10 +102,8 @@
         isLoading: function () {
             return this._isLoading;
         }
-
     })
 })(jQuery);
-
 
 (function ($) {
     'use strict';
@@ -238,3 +236,99 @@
         });
     }
 })(jQuery);
+
+(function ($) {
+
+    'use strict';
+
+    var spinKits = {
+        'spinClass' : 'spin-kit',
+        'cycle' : {
+            css : 'sk-circle',
+            'childCount' : 12
+        }
+    };
+
+    var methods = {
+
+        init : function (options) {
+
+            var opts = $.extend({}, $.fn.loadingOverlay.defaults, options);
+
+            var element = $(this);
+
+            // already loading
+            if (element.hasClass(opts.loadingClass)) return;
+
+            element.addClass(opts.loadingClass);
+
+            // handle element position
+            var position = element.css('position');
+            if (position == 'static') {
+                element.css('position', 'relative').data('position', position);
+            }
+
+            var overlay = methods._renderOverlay(opts.loader, opts.width, opts.height);
+
+            overlay = $(overlay).children().css({
+                'margin-left' : -opts.width/2,
+                'margin-top'  : -opts.height/2
+            }).end();
+
+
+            if (!element.data('loading-overlay')) {
+                element.prepend(overlay).data('loading-overlay', true);
+            }
+            return element;
+        },
+
+        remove : function (options) {
+
+            var opts = $.extend({}, $.fn.loadingOverlay.defaults, options);
+            var self = $(this).data('loading-overlay', false).removeClass(opts.loadingClass);
+
+            // remove loading
+            self.children('.spin-kit').detach();
+
+            return self;
+        },
+
+        _renderOverlay : function(loader,  width, height) {
+            var loader = spinKits[loader];
+
+            var loaderHtml = '<div class="spin-kit">';
+            loaderHtml += '<div class="' + loader.css + '">';
+            for (var i = 1; i <= loader.childCount; i++)  {
+                loaderHtml += '<div class="' + loader.css + i + ' sk-child"></div>';
+            }
+            loaderHtml += '</div>';
+            loaderHtml += '</div>';
+
+            return loaderHtml;
+        }
+
+    };
+
+    $.fn.loadingOverlay = function (method) {
+
+        if (methods[method]) {
+            return methods[method].apply(
+                this,
+                Array.prototype.slice.call(arguments, 1)
+            );
+        } else if (typeof method === 'object' || !method) {
+            return methods.init.apply(this, arguments);
+        } else {
+            $.error('Method ' + method + ' does not exist on jQuery.loadingOverlay');
+        }
+    };
+
+    /* Setup plugin defaults */
+    $.fn.loadingOverlay.defaults = {
+        loadingClass : 'loading-overlay',
+        loader : 'cycle',  // Class added to overlay (style with CSS)
+        height : 40,
+        width  : 40
+    };
+
+}(jQuery));
