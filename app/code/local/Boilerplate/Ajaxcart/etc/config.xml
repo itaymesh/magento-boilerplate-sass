@@ -1,0 +1,218 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Studio Raz.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the  Studio Raz EULA that is bundled with
+ * this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://studioraz.co.il/eula.html
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade the extension
+ * to newer versions in the future. If you wish to customize the extension
+ * for your needs please refer to http://studioraz.co.il/ for more information
+ * or send an email to support@studioraz.co.il
+ *
+ * @category   Boilerplate
+ * @package    Boilerplate_Ajaxcart
+ * @version    1.0.0
+ * @copyright  Copyright (c) 2015 Studio Raz (http://studioraz.co.il/)
+ * @license    http://studioraz.co.il/eula.html
+ */
+ -->
+<config>
+    <modules>
+        <Boilerplate_Ajaxcart>
+            <version>1.0.0</version>
+            <platform>ce</platform>
+        </Boilerplate_Ajaxcart>
+    </modules>
+    <global>
+        <blocks>
+            <ajaxcartpro>
+                <class>Boilerplate_Ajaxcart_Block</class>
+            </ajaxcartpro>
+        </blocks>
+        <helpers>
+            <ajaxcartpro>
+                <class>Boilerplate_Ajaxcart_Helper</class>
+            </ajaxcartpro>
+        </helpers>
+        <resources>
+            <ajaxcartpro_setup>
+                <setup>
+                    <module>Boilerplate_Ajaxcart</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </ajaxcartpro_setup>
+            <ajaxcartpro_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </ajaxcartpro_write>
+            <ajaxcartpro_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </ajaxcartpro_read>
+        </resources>
+        <models>
+            <ajaxcartpro>
+                <class>Boilerplate_Ajaxcart_Model</class>
+                <resourceModel>ajaxcartpro_mysql4</resourceModel>
+            </ajaxcartpro>
+            <ajaxcartpro_mysql4>
+                <class>Boilerplate_Ajaxcart_Model_Mysql4</class>
+            </ajaxcartpro_mysql4>
+        </models>
+        <events>
+            <controller_action_layout_render_before>
+                <observers>
+                    <ajaxcartproresponse>
+                        <type>singleton</type>
+                        <class>ajaxcartpro/observer</class>
+                        <method>beforeRenderLayout</method>
+                    </ajaxcartproresponse>
+                </observers>
+            </controller_action_layout_render_before>
+            <http_response_send_before>
+                <observers>
+                    <clearresponse>
+                        <type>singleton</type>
+                        <class>ajaxcartpro/observer</class>
+                        <method>sendResponseBefore</method>
+                    </clearresponse>
+                </observers>
+            </http_response_send_before>
+            <controller_action_layout_load_before>
+                <observers>
+                    <ajaxcartpro_system_config>
+                        <type>singleton</type>
+                        <class>ajaxcartpro/observer</class>
+                        <method>loadLayoutBefore</method>
+                    </ajaxcartpro_system_config>
+                </observers>
+            </controller_action_layout_load_before>
+            <checkout_cart_product_add_after>
+                <observers>
+                    <ajaxcartpro_cart_product_add_after>
+                        <type>singleton</type>
+                        <class>ajaxcartpro/observer</class>
+                        <method>checkoutCartProductAddAfter</method>
+                    </ajaxcartpro_cart_product_add_after>
+                </observers>
+            </checkout_cart_product_add_after>
+        </events>
+    </global>
+    <frontend>
+        <routers>
+            <ajaxcartpro>
+                <use>standard</use>
+                <args>
+                    <module>Boilerplate_Ajaxcart</module>
+                    <frontName>ajaxcartpro</frontName>
+                </args>
+            </ajaxcartpro>
+        </routers>
+        <layout>
+            <updates>
+                <Boilerplate_Ajaxcart module="Boilerplate_Ajaxcart">
+                    <file>boilerplate/ajaxcart.xml</file>
+                </Boilerplate_Ajaxcart>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <Boilerplate_Ajaxcart>
+                    <files>
+                        <default>Boilerplate_Ajaxcart.csv</default>
+                    </files>
+                </Boilerplate_Ajaxcart>
+            </modules>
+        </translate>
+    </frontend>
+    <admin>
+        <routers>
+            <ajaxcartpro_admin>
+                <use>admin</use>
+                <args>
+                    <module>Boilerplate_Ajaxcart</module>
+                    <frontName>ajaxcartpro_admin</frontName>
+                </args>
+            </ajaxcartpro_admin>
+        </routers>
+    </admin>
+    <adminhtml>
+        <layout>
+            <updates>
+                <ajaxcartpro module="Boilerplate_Ajaxcart">
+                    <file>aw_ajaxcartpro.xml</file>
+                </ajaxcartpro>
+            </updates>
+        </layout>
+        <acl>
+            <resources>
+                <all>
+                    <title>Allow Everything</title>
+                </all>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <ajaxcartpro>
+                                            <title>Boilerplate - AJAX Cart</title>
+                                        </ajaxcartpro>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+        <translate>
+            <modules>
+                <Boilerplate_Ajaxcart>
+                    <files>
+                        <default>Boilerplate_Ajaxcart.csv</default>
+                    </files>
+                </Boilerplate_Ajaxcart>
+            </modules>
+        </translate>
+    </adminhtml>
+    <default>
+        <ajaxcartpro>
+            <general>
+                <progressanimation>center</progressanimation>
+                <cartanimation>opacity</cartanimation>
+                <showprogressanimation>1</showprogressanimation>
+            </general>
+            <addproductconfirmation>
+                <content>
+                    {{block type="ajaxcartpro/confirmation_items_continue"}}
+                    or
+                    {{block type="ajaxcartpro/confirmation_items_gotocheckout"}}
+                </content>
+                <enabled>1</enabled>
+                <countdown>0</countdown>
+            </addproductconfirmation>
+            <removeproductconfirmation>
+                <content>
+                    {{block type="ajaxcartpro/confirmation_items_continue"}}
+                    or
+                    {{block type="ajaxcartpro/confirmation_items_gotocheckout"}}
+                </content>
+                <enabled>1</enabled>
+                <countdown>0</countdown>
+            </removeproductconfirmation>
+        </ajaxcartpro>
+    </default>
+</config>

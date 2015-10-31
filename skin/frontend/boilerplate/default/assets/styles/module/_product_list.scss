@@ -85,13 +85,73 @@
 // product item
 
 .item {
+  .item-inner {
+    position: relative;
+  }
   .product-name {
     white-space: normal;
-    margin: 5px 0 0 0;
+    margin: 0;
     font-size: $font-size-base;
+    font-weight: bold;
+    a {
+      @include link-color($gray);
+    }
   }
+
+  .product-info {
+    padding-top: .5em;
+    text-align: center;
+    margin-top: 10px;
+    border-top:1px solid $gray;
+  }
+
   .price-box {
-    margin-top: 3px;
+    margin-top: 2px;
+    font-size: 16px;
+    font-weight: normal;
+  }
+  .link-wishlist, .product-badge {
+    position: absolute;
+    z-index: 1;
+    top: 8px;
+    //font-size: 13px;
+    @include not-selectable;
+  }
+
+  .link-wishlist {
+    left: 8px;
+    @include make-font-icon($icon-var-heart-empty);
+    &:before {
+      //@include link-color($gray, $pink);
+      font-size: 22px;
+    }
+  }
+
+  .product-badge {
+    right: 30px;
+    text-transform: uppercase;
+    color: $white;
+    font-weight: bold;
+    padding: .2em 10px .1em;
+    &.sale {
+      border-radius: 12px;
+      //background-color: $sale-color;
+    }
+    &.new {
+      border-top-right-radius: 3px;
+      border-bottom-right-radius: 3px;
+      //background-color: $new-color;
+      //@include arrow-lazy(left, 12px, $new-color);
+      position: absolute;
+    }
+  }
+
+  &:hover {
+    .link-wishlist {
+      &:before {
+        //color: $pink;
+      }
+    }
   }
 }
 
@@ -102,6 +162,10 @@
     background-color: $white;
     margin-bottom: 20px;
     position: relative;
+
+    .item-inner {
+      position: static;
+    }
 
     .product-image {
       display: block;
@@ -118,11 +182,6 @@
       }
     }
 
-    .product-info {
-      padding-top: .5em;
-      text-align: center;
-    }
-
     .price-box {
       margin-top: 5px;
     }
@@ -133,50 +192,37 @@
         display: none;
       }
     }
-    .link-wishlist, .product-badge {
-      position: absolute;
-      z-index: 1;
-      top: 4px;
-      @include not-selectable;
-    }
-    .product-badge {
-      right: 30px;
-      text-transform: uppercase;
-      color: $white;
-      font-weight: bold;
-      &.sale {
-        border-radius: 12px;
-        padding: 2px 8px;
-        background-color: $sale-color;
-      }
-      &.new {
-        border-top-right-radius: 3px;
-        border-bottom-right-radius: 3px;
-        padding: 2px 8px;
-        background-color: $new-color;
-        @include arrow-lazy(left, 12px, $new-color);
-        position: absolute;
-      }
-    }
 
     .link-wishlist {
       left: 30px;
-      @include make-font-icon($icon-var-heart-empty);
-      &:before {
-        @include link-color($gray, $pink);
-        font-size: 22px;
-      }
+    }
+
+    .product-info {
 
     }
+
+    .product-item-actions {
+
+    }
+    .action {
+
+    }
+
+    .btn-cart {
+      display: block;
+      width: 90%;
+      font-weight: bold;
+      margin: 0 auto;
+      font-size: 16px;
+    }
+
     // hover box effect for prodct item
 
     @media (min-width: $grid-float-breakpoint) {
 
-      margin-top: 30px;
-
       .product-image {
         // TODO-SR: set product item image with for wide screens
-        width: 90%;
+        width: 95%;
         margin: 0 auto;
       }
       &:hover {
@@ -194,7 +240,7 @@
           display: block;
         }
         .product-badge, .link-wishlist {
-          top: 23px;
+          top: 27px;
         }
         .product-badge {
           right: 29px;
@@ -203,7 +249,7 @@
         .link-wishlist {
           left: 29px;
           &:before {
-            color: $pink;
+            //color: $pink;
           }
         }
       }
@@ -222,7 +268,7 @@
         box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.3);
       }
       .product-item-actions {
-        margin: -10px 0 10px;
+        margin: 0 0 10px;
         background-color: $white;
       }
     }
@@ -293,7 +339,10 @@
   }
 
   li {
-    @include clearfix();
+    &:after {
+      @include clearfix-after;
+    }
+
   }
 }
 
@@ -325,147 +374,3 @@
   }
 }
 
-/* ============================================ *
- * Layered Navigation
- * ============================================ */
-.block-layered-nav {
-  .block-title {
-    display: none;
-  }
-}
-
-.block-layered-nav .block-subtitle--filter {
-  // Will be shown at smaller viewports
-  display: none;
-  @include accordionDtBase;
-  cursor: pointer;
-}
-
-.block-layered-nav .block-content {
-  // Accordions are fully expanded until a smaller resolution.
-  @include accordion;
-}
-
-.block-layered-nav dl dd {
-  //margin-bottom: $box-spacing;
-  //margin-top: $box-spacing;
-
-  ol > li > span, ol > li > a {
-    padding: 5px 15px;
-    display: block;
-  }
-  ol > li > a .count {
-    //color: $c-text-gray;
-  }
-}
-
-@media (min-width: $screen-tablet) {
-  .block-layered-nav {
-    .block-content {
-      > dl {
-        > dt {
-          &:not(:first-child) {
-            margin-top: $line-height-computed;
-          }
-          &:after {
-            display: none;
-          }
-        }
-      }
-    }
-  }
-
-}
-
-@media (max-width: $screen-xs-max) {
-  .sidebar .block.block-layered-nav {
-    border-bottom: none;
-  }
-
-  // We don't want "Shop By" to show when there are no filters applied, as the "Filter" link will suffice
-  .block-layered-nav--no-filters .block-title {
-    display: none;
-  }
-
-  // Remove the top padding and re-add it as margin-top so that the margin will collapse with elements above it
-  .block-layered-nav .block-content {
-    padding-top: 0;
-    margin-top: 15px;
-    @include accordionCollapse;
-  }
-
-  .block-layered-nav .block-subtitle--filter {
-    //background-color: $c-action;
-    border: 0;
-    margin-bottom: 0;
-    display: block;
-
-    &:after {
-      @include triangle(right, 4px, #FFFFFF);
-      right: 10px;
-      top: 50%;
-      margin-top: -5px;
-    }
-
-    &:hover {
-      //background-color: $c-button-hover;
-    }
-
-    &.active:after {
-      @include triangle(down, 4px, #FFFFFF);
-      right: 10px;
-      top: 50%;
-      margin-top: -3px;
-    }
-  }
-
-  #narrow-by-list,
-  #narrow-by-list2 {
-    //padding: $box-spacing;
-    //border: 1px solid $c-module-border;
-    border-top: 0;
-  }
-
-  .block-layered-nav dl ol > li > a,
-  .block-layered-nav dl ol > li > span {
-    padding: 7px;
-    margin: 5px;
-  }
-
-  .block-layered-nav dl ol > li > a {
-    //@include touch-button;
-
-    &:hover {
-      text-decoration: none;
-      //background: $c-module-background-hover;
-    }
-  }
-}
-
-.block-layered-nav .currently {
-  .block-subtitle {
-    display: block;
-    //@include h4;
-  }
-
-  ol {
-    //padding-left: $box-spacing;
-    //margin-bottom: $box-spacing;
-  }
-  ol li {
-    margin-bottom: 5px;
-
-    .label {
-      font-weight: bold;
-    }
-
-    &:after {
-      //@include clearfix;
-    }
-  }
-}
-
-.block-layered-nav .actions {
-  text-align: right;
-  //margin-bottom: $element-spacing;
-}

@@ -35,3 +35,50 @@ $btn-invert-bg:                   $white;
 $btn-invert-border:               $black;
 $btn-invert-hover-color:          $white;
 $btn-invert-hover-bg:             $black;
+
+//== Panels
+//
+//##
+
+$panel-default-body-bg:       $gray !default;
+
+
+//== Images
+//
+
+$img-folder-path:    '../images/';
+
+
+//== Theme
+//
+$c-action: $brand-primary;
+$c-text-primary: $brand-primary;
+$header-height: 38px;
+$c-module-background: #F4F4F4;
+
+
+// Spacing
+
+$gap: 10px;
+
+$trim: 30px;
+// This will get applied on viewports smaller than 480px
+$trim-small: 15px;
+
+// Padding that will get applied to content areas
+$box-spacing-large: 20px;
+
+// Standard padding around box elements such as banner messages, etc
+$box-spacing: 10px;
+
+// Standard spacing between elements within a box, such as "Add to cart", "Price box", etc
+$element-spacing: 7px;
+
+
+//== Checkout
+//
+
+$checkout-tabs-bg : $pre-bg;
+$checkout-tab-active-bg: #4B4B4B;
+$checkout-tab-number-bg: $gray;
+$checkout-tab-number-color: $gray-dark;

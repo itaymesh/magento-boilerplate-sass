@@ -9,8 +9,9 @@
 @import "module/catalog_prices";
 @import "module/catalog_product";
 @import "module/product_list";
-@import "module/layered_navigation";
+//@import "module/layered_navigation";
 @import "module/ratings";
 @import "module/newsletter";
 @import "module/widget";
-@import "module/boilerplate_social";
+@import "module/boilerplate/social";
+@import "module/boilerplate/ajaxcart";

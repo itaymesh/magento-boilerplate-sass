@@ -1,0 +1,13 @@
+<script>
+	(function($) {
+		$('.item', '.products-grid').each(function() {
+			var self = $(this),
+				link = self.find('.product-name a');
+			var quickView = $('<a class="quick-view" href="' + link.attr('href') + '"><?php echo $this->__('Quick View'); ?></a>');
+			quickView.ajaxCart();
+			$(this).append(quickView);
+		});
+
+		$('.add-to-cart-buttons .btn-cart').not('.btn-cart-update').ajaxCart();
+	})(jQuery);
+</script>

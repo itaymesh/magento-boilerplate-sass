@@ -1,4 +1,4 @@
-@mixin link-color($color, $color-hover, $color-active) {
+@mixin link-color($color, $color-hover: $link-hover-color, $color-active: $link-hover-color) {
   color: $color;
   &:hover {
     color: $color-hover;

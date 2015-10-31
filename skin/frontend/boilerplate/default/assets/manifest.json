@@ -50,6 +50,7 @@
         "scripts/plugins.js",
         "scripts/varien/accordion.js",
         "scripts/varien/form.js",
+        "scripts/ajaxcart.js",
         "scripts/script.js"
       ]
     },
@@ -61,7 +62,7 @@
     }
   },
   "config": {
-    "devUrl": "http://dev.anerobi",
+    "devUrl": "http://dev.dev-1921",
     "flip" : true
   }
 }

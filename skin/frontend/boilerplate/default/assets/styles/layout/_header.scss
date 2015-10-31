@@ -76,9 +76,9 @@ header[role="banner"] {
 // Quick Access
 .quick-access {
   .top-link-cart {
-    @include make-fontello-icon('\e804', before);
+    @include make-font-icon('\e804', before);
   }
   .top-links-wishlist {
-    @include make-fontello-icon('\e806', before);
+    @include make-font-icon('\e806', before);
   }
 }

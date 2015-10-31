@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <default>
+        <reference name="head">
+            <action method="addJs"><script>varien/product.js</script></action>
+            <action method="addItem"><type>js_css</type><name>calendar/calendar-win2k-1.css</name><params/><!--<if/><condition>can_load_calendar_js</condition>--></action>
+            <action method="addItem"><type>js</type><name>calendar/calendar.js</name><!--<params/><if/><condition>can_load_calendar_js</condition>--></action>
+            <action method="addItem"><type>js</type><name>calendar/calendar-setup.js</name><!--<params/><if/><condition>can_load_calendar_js</condition>--></action>
+
+            <!--<action method="addJs"><script>boilerplate/ajaxcartpro/product.js</script></action>
+            <action method="addJs"><script>boilerplate/ajaxcartpro/product.config.ajaxcart.js</script></action>
+            <action method="addItem"><type>skin_js</type><name>js/bundle.js</name></action>
+            <action method="addJs"><script>boilerplate/ajaxcartpro/configurable.js</script></action>-->
+
+
+        </reference>
+
+    </default>
+
+    <remove_ajaxcartpro>
+        <remove name="aw.ajaxcartpro.init"/>
+        <remove name="aw.ajaxcartpro.overlay"/>
+        <remove name="aw.ajaxcartpro.progress"/>
+        <remove name="aw.ajaxcartpro.confirm.addproduct"/>
+        <remove name="aw.ajaxcartpro.confirm.removeproduct"/>
+        <remove name="aw.ajaxcartpro.container"/>
+    </remove_ajaxcartpro>
+
+
+    <catalog_category_default>
+        <update handle="ajaxcartpro_update_product_list"/>
+    </catalog_category_default>
+
+    <catalog_category_layered>
+        <update handle="ajaxcartpro_update_product_list"/>
+    </catalog_category_layered>
+
+    <ajaxcartpro_update_product_list>
+        <reference name="product_list.after">
+            <block name="boilerplate/ajaxcartpro.product.list.after" type="core/template"
+                   template="boilerplate/ajaxcartpro/product/list/js.phtml"/>
+        </reference>
+    </ajaxcartpro_update_product_list>
+
+
+    <catalog_product_view>
+        <reference name="product.info">
+            <block type="catalog/product_view_media" name="ajaxpro.product.info.media" as="ajaxpro_media"
+                   template="boilerplate/ajaxcartpro/product/view/media.phtml"/>
+        </reference>
+
+        <reference name="product.info.additional">
+            <block name="ajaxcartpro.product.list.after" type="core/template"
+                   template="boilerplate/ajaxcartpro/product/list/js.phtml"/>
+        </reference>
+    </catalog_product_view>
+
+
+
+</layout>

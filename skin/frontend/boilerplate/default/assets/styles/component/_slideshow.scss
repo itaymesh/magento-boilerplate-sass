@@ -131,7 +131,7 @@
 
   left: 0;
 
-  @include make-fontello-icon('\e805');
+  @include make-font-icon('\e805');
 
   &:hover:before {
   }
@@ -140,7 +140,7 @@
 .slideshow-next {
   right: 0;
 
-  @include make-fontello-icon('\e807');
+  @include make-font-icon('\e807');
 
   &:hover:before {
 

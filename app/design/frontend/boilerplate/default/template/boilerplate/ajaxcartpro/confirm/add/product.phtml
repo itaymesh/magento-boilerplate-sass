@@ -1,0 +1,18 @@
+<?php if ($_product = Mage::registry('product')): ?>
+    
+        
+        <div class="product-added">
+            
+            <h3><?php  echo $this->__("The product %s<br/>had been added to your shopping cart" ,$_product->getName()); ?></h3>
+                       
+            <a href="#" class="aw-acp-continue btn btn-medium" class="focus"><?php echo $this->__('Continue shopping')?></a>
+                
+            <a class="aw-acp-checkout btn btn-medium btn-orange" href="<?php echo Mage::getUrl('checkout/cart')?>"><?php echo $this->__('View cart')?></a>
+        
+        </div>
+    
+        <?php echo $this->getChildHtml('ajaxcartpro_upsell_products'); ?>
+           
+           
+<?php endif; ?>
+ 

@@ -1,15 +1,15 @@
 // Fontello font generator icons
 // @see: http://fontello.com/
 // remember to include fontello stylesheet in ./scss/_font.scss file first
-@mixin make-fontello-icon($code, $pseudo: before) {
+@mixin make-font-icon($code, $pseudo: before) {
 
   &:#{$pseudo} {
     content: $code;
-    @extend .fontello-icon;
+    @extend .font-icon;
   }
 }
 
-.fontello-icon {
+.font-icon {
   font-family: "fontello";
   font-style: normal;
   font-weight: normal;
@@ -42,4 +42,22 @@
 
   /* Uncomment for 3D effect */
   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+@mixin icon-cycle($size: 1em, $border: 1px solid, $font-size:$font-size-base) {
+  font-size: $font-size;
+  box-sizing: content-box;
+  border-radius: 50%;
+  border: $border;
+  //border-color:$border-color;
+  width: $size;
+  height: $size;
+  line-height: $size;
+  //background-color: $backgroud-color;
+  text-align: center;
+  //color: $color;
+  &:hover {
+    //color: $color-hover;
+    //background-color: $background-color-hover;
+  }
 }

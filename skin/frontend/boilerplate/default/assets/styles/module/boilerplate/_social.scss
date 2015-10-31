@@ -1,0 +1,23 @@
+.footer-social-links {
+  color: $white;
+  .block-title {
+    font-weight: bold;
+    margin-top: 6px;
+    margin-right: 10px;
+    font-size: 16px;
+  }
+  a {
+    @include link-color($white);
+    font-size: 30px;
+    i:before {
+      margin:0;
+    }
+  }
+  li {
+    margin-right: 5px;
+  }
+  .block-title, ul, li {
+    float: left;
+    line-height: 1;
+  }
+}

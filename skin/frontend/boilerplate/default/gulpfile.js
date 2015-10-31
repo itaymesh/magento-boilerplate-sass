@@ -249,9 +249,6 @@ gulp.task('clean', require('del').bind(null, [path.dist]));
 // See: http://www.browsersync.io
 gulp.task('watch', function() {
     browserSync.init({
-        files:  [{
-            match: ['app/design/frontend/**/*.phtml']
-        }],
         open: true,
         logConnections: true,
         proxy: config.devUrl,

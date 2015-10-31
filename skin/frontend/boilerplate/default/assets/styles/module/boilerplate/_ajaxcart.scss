@@ -1,0 +1,56 @@
+/** ==================  Base ===================*/
+.quick-view,.mfp-quick-view {
+  display: none;
+  z-index: 100;
+}
+@media (min-width:$screen-desktop) {
+  .mfp-quick-view {
+    display: block;
+  }
+  .item {
+    &:hover {
+      .quick-view {
+        display: block;
+      }
+    }
+  }
+}
+
+/** ==================  Product List Button ===================*/
+.quick-view {
+  position: absolute;
+}
+
+.products-grid {
+  @media (min-width:$grid-float-breakpoint-max) {
+    > .item {
+      &:hover {
+        .quick-view {
+        }
+      }
+    }
+  }
+}
+
+/** ==================  Quick View Popup ==================*/
+
+.mfp-quick-view  {
+  .mfp-container {
+    .mfp-content {
+      padding: 30px;
+      background-color: $white;
+      max-width: $screen-desktop;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+/** ==================  Product View  ==================*/
+.product-view-ajax {
+  padding-left: 0;
+  padding-right: 0;
+  .short-description {
+    display: none;
+  }
+}

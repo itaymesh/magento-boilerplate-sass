@@ -7,4 +7,5 @@ app/etc/modules/Boilerplate_BootstrapNavigation.xml         app/etc/modules/Boil
 app/etc/modules/Boilerplate_Social.xml                      app/etc/modules/Boilerplate_Social.xml
 app/etc/modules/Boilerplate_Mage.xml                        app/etc/modules/Boilerplate_Mage.xml
 app/etc/modules/Boilerplate_Catalog.xml                     app/etc/modules/Boilerplate_Catalog.xml
+app/etc/modules/Boilerplate_Ajaxcart.xml                    app/etc/modules/Boilerplate_Ajaxcart.xml
 skin/frontend/boilerplate/default                           skin/frontend/boilerplate/default

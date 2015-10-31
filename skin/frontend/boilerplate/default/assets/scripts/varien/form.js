@@ -112,7 +112,7 @@ VarienForm.prototype.onAjaxComplete = function (response) {
 
 VarienForm.prototype.onAjaxLoading = function () {
     this.ajaxMessage.hide();
-}
+};
 
 
 
